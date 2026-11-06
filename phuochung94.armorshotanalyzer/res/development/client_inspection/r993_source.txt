@@ -1,0 +1,274 @@
+test_all_shell_labels (client_overlay_tests.CalculationTests) ... ok
+test_ap_has_no_heat_air_gap_penalty (client_overlay_tests.CalculationTests) ... ok
+test_compact_probability_and_spaced_format (client_overlay_tests.CalculationTests) ... ok
+test_distribution_is_symmetric_monotonic_and_continuous_at_bounds (client_overlay_tests.CalculationTests) ... ok
+test_duplicate_material_preserves_client_gap_order (client_overlay_tests.CalculationTests) ... ok
+test_each_shell_actual_rng_defines_bounds (client_overlay_tests.CalculationTests) ... ok
+test_empty_collisions (client_overlay_tests.CalculationTests) ... ok
+test_exhausted_gap_blocks_all_rolls_and_zero_loss_preserves_them (client_overlay_tests.CalculationTests) ... ok
+test_exhausted_jet_is_zero (client_overlay_tests.CalculationTests) ... ok
+test_he_that_cannot_pass_shield (client_overlay_tests.CalculationTests) ... ok
+test_heat_does_not_use_mean_shot_losses (client_overlay_tests.CalculationTests) ... ok
+test_heat_layers_require_roll_specific_initial_penetration (client_overlay_tests.CalculationTests) ... ok
+test_heat_screen_does_not_imply_no_penetration (client_overlay_tests.CalculationTests) ... ok
+test_hesh_modern_he_direct_armor_and_rng (client_overlay_tests.CalculationTests) ... ok
+test_hesh_shield_blocked_is_full_penetration_only (client_overlay_tests.CalculationTests) ... ok
+test_hesh_spaced_armor_uses_he_shield_factor_without_heat_loss (client_overlay_tests.CalculationTests) ... ok
+test_invalid_rng_is_unknown_instead_of_fake_probability (client_overlay_tests.CalculationTests) ... ok
+test_layer_distribution_matches_forward_simulated_rolls (client_overlay_tests.CalculationTests) ... ok
+test_legacy_reference_agrees_only_without_roll_dependent_losses (client_overlay_tests.CalculationTests) ... ok
+test_modern_he_raw_gate_and_accumulated_absorption (client_overlay_tests.CalculationTests) ... ok
+test_modern_he_screen_multiplier (client_overlay_tests.CalculationTests) ... ok
+test_module_reachability_uses_best_roll_after_heat_gap (client_overlay_tests.CalculationTests) ... ok
+test_multiple_heat_gaps (client_overlay_tests.CalculationTests) ... ok
+test_multiple_screens_all_shells_unusual_spreads (client_overlay_tests.CalculationTests) ... ok
+test_near_zero_does_not_say_impossible (client_overlay_tests.CalculationTests) ... ok
+test_no_secondary_heat_ricochet (client_overlay_tests.CalculationTests) ... ok
+test_ricochet (client_overlay_tests.CalculationTests) ... ok
+test_rng_bounds_and_nonstandard_shell (client_overlay_tests.CalculationTests) ... ok
+test_standard_spread_gaussian_is_normalized_within_roll_bounds (client_overlay_tests.CalculationTests) ... ok
+test_track_only_cannot_damage_hull (client_overlay_tests.CalculationTests) ... ok
+test_unknown_material_is_not_faked (client_overlay_tests.CalculationTests) ... ok
+test_zero_randomization_is_deterministic_through_layers (client_overlay_tests.CalculationTests) ... ok
+test_all_status_rows_stay_hidden_and_angle_remains_visible (client_overlay_tests.IntegrationTests) ... ok
+test_angle_is_white_and_visible_after_settings_refresh (client_overlay_tests.IntegrationTests) ... ok
+test_angle_uses_collision_even_without_armor_angle_multiplier (client_overlay_tests.IntegrationTests) ... ok
+test_bright_palette_uses_real_base_gradient (client_overlay_tests.IntegrationTests) ... ok
+test_compiled_entrypoint_installs_once (client_overlay_tests.IntegrationTests) ... ok
+test_current_client_default_and_he_methods_return_exact_results (client_overlay_tests.IntegrationTests) ... ok
+test_disabled_mod_hides_extra_row (client_overlay_tests.IntegrationTests) ... ok
+test_failed_event_unsubscribe_is_inert_and_retryable (client_overlay_tests.IntegrationTests) ... Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 93, in uninstall
+    event -= callback
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\tests\test_shell_info.py", line 707, in __isub__
+    if self.fail:raise RuntimeError('host event temporarily unavailable')
+RuntimeError: host event temporarily unavailable
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 93, in uninstall
+    event -= callback
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\tests\test_shell_info.py", line 707, in __isub__
+    if self.fail:raise RuntimeError('host event temporarily unavailable')
+RuntimeError: host event temporarily unavailable
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+ok
+test_he_zero_penetration_has_unknown_damage (client_overlay_tests.IntegrationTests) ... ok
+test_heat_screen_updates_effective_armor_and_color (client_overlay_tests.IntegrationTests) ... ok
+test_hesh_uses_modern_he_wrapper_and_preserves_result (client_overlay_tests.IntegrationTests) ... ok
+test_hidden_status_color_still_applies_to_armor (client_overlay_tests.IntegrationTests) ... ok
+test_inherited_client_descriptors_restored_without_local_override (client_overlay_tests.IntegrationTests) ... ok
+test_install_is_idempotent (client_overlay_tests.IntegrationTests) ... ok
+test_iterator_is_not_consumed_before_client (client_overlay_tests.IntegrationTests) ... ok
+test_lifecycle_cleanup_removes_events_and_restores_methods (client_overlay_tests.IntegrationTests) ... Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+ok
+test_lifecycle_preserves_original_exceptions (client_overlay_tests.IntegrationTests) ... Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+ok
+test_loaded_ammo_changes_label_and_preserves_result (client_overlay_tests.IntegrationTests) ... ok
+test_loader_fini_restores_all_hooks_and_events (client_overlay_tests.IntegrationTests) ... Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+ok
+test_modern_he_wrapper (client_overlay_tests.IntegrationTests) ... ok
+test_module_before_impenetrable_hull_is_orange (client_overlay_tests.IntegrationTests) ... ok
+test_no_hull_module_shows_orange_dash_without_angle_or_status (client_overlay_tests.IntegrationTests) ... ok
+test_nonpenetrating_heat_is_red (client_overlay_tests.IntegrationTests) ... ok
+test_normal_impact_zero_degrees_is_valid (client_overlay_tests.IntegrationTests) ... ok
+test_original_exception_propagates_unchanged (client_overlay_tests.IntegrationTests) ... ok
+test_original_receives_identical_objects_and_result (client_overlay_tests.IntegrationTests) ... ok
+test_overlay_and_error_cleanup_failures_cannot_change_result (client_overlay_tests.IntegrationTests) ... Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source\armorshotanalyzer_shell_info.py", line 316, in wrapped
+    gui_state.hide_all()
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\tests\test_shell_info.py", line 596, in broken
+    def broken(*args):raise RuntimeError('GUI unavailable')
+RuntimeError: GUI unavailable
+ok
+test_partial_lifecycle_install_rolls_back (client_overlay_tests.IntegrationTests) ... Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+ok
+test_penetrable_spaced_armor_uses_original_gradient (client_overlay_tests.IntegrationTests) ... ok
+test_penetrable_track_module_without_hull_is_orange (client_overlay_tests.IntegrationTests) ... ok
+test_repeated_battle_garage (client_overlay_tests.IntegrationTests) ... Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+ok
+test_retained_old_wrapper_is_inert_after_unload_and_reload (client_overlay_tests.IntegrationTests) ... ok
+test_ricochet_remains_red (client_overlay_tests.IntegrationTests) ... ok
+test_single_status_prioritizes_no_hull_over_spaced (client_overlay_tests.IntegrationTests) ... ok
+test_uninstall_restores_descriptors_and_allows_reinstall (client_overlay_tests.IntegrationTests) ... ok
+test_unknown_data_stays_grey (client_overlay_tests.IntegrationTests) ... ok
+test_unknown_or_track_only_has_no_fake_angle (client_overlay_tests.IntegrationTests) ... ok
+test_unload_does_not_overwrite_later_mod_hook (client_overlay_tests.IntegrationTests) ... Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 33, in close
+    ap_window.close_window()
+AttributeError: 'Obj' object has no attribute 'close_window'
+ok
+test_unreachable_module_is_not_marked_damage_possible (client_overlay_tests.IntegrationTests) ... ok
+test_unsupported_client_data_fails_without_changing_result (client_overlay_tests.IntegrationTests) ... ok
+test_window_closes_even_when_hide_or_destroy_fails (client_overlay_tests.IntegrationTests) ... Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 29, in <lambda>
+    _safe(lambda: _state().destroy_window())
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\tests\test_shell_info.py", line 728, in broken
+    def broken():raise RuntimeError('label teardown failed')
+RuntimeError: label teardown failed
+Traceback (most recent call last):
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 11, in _safe
+    callback(*args, **kwargs)
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\source/armorshotanalyzer_hooks.py", line 29, in <lambda>
+    _safe(lambda: _state().destroy_window())
+  File "C:\pademinune-AP_Calculator-2.2.0\pademinune-AP_Calculator-Windows\res\development\tests\test_shell_info.py", line 728, in broken
+    def broken():raise RuntimeError('label teardown failed')
+RuntimeError: label teardown failed
+ok
+
+----------------------------------------------------------------------
+Ran 73 tests in 0.363s
+
+OK

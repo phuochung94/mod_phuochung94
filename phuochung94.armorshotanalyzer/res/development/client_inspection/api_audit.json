@@ -1,0 +1,89 @@
+{
+  "OpenWG/model.js": {
+    "missing": [], 
+    "required": [
+      "ModelObserver", 
+      "onUpdate", 
+      "subscribe"
+    ]
+  }, 
+  "scripts/client/AvatarInputHandler/__init__.pyc": {
+    "missing": [], 
+    "required": [
+      "activatePostmortem"
+    ]
+  }, 
+  "scripts/client/PlayerEvents.pyc": {
+    "missing": [], 
+    "required": [
+      "onAvatarReady", 
+      "onAvatarBecomeNonPlayer"
+    ]
+  }, 
+  "scripts/client/aih_constants.pyc": {
+    "missing": [], 
+    "required": [
+      "SHOT_RESULT", 
+      "UNDEFINED", 
+      "NOT_PIERCED", 
+      "LITTLE_PIERCED", 
+      "GREAT_PIERCED"
+    ]
+  }, 
+  "scripts/client/frameworks/wulf/__init__.pyc": {
+    "missing": [], 
+    "required": [
+      "PositionAnchor", 
+      "ViewFlags", 
+      "ViewModel", 
+      "ViewSettings", 
+      "WindowFlags", 
+      "WindowLayer"
+    ]
+  }, 
+  "scripts/client/frameworks/wulf/view/view.pyc": {
+    "missing": [], 
+    "required": [
+      "getViewModel"
+    ]
+  }, 
+  "scripts/client/frameworks/wulf/view/view_model.pyc": {
+    "missing": [], 
+    "required": [
+      "transaction", 
+      "_addStringProperty", 
+      "_addBoolProperty", 
+      "_setString", 
+      "_setBool"
+    ]
+  }, 
+  "scripts/client/frameworks/wulf/windows_system/window.pyc": {
+    "missing": [], 
+    "required": [
+      "load", 
+      "show", 
+      "onSizeChanged"
+    ]
+  }, 
+  "scripts/client/gui/impl/pub/__init__.pyc": {
+    "missing": [], 
+    "required": [
+      "ViewImpl", 
+      "WindowImpl"
+    ]
+  }, 
+  "scripts/client/gui/impl/pub/view_impl.pyc": {
+    "missing": [], 
+    "required": [
+      "_onLoading"
+    ]
+  }, 
+  "scripts/client/gui/impl/pub/window_impl.pyc": {
+    "missing": [], 
+    "required": [
+      "destroy", 
+      "center", 
+      "move"
+    ]
+  }
+}

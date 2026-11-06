@@ -1,0 +1,52 @@
+# uncompyle6 version 3.9.3
+# Python bytecode version base 2.7 (62211)
+# Decompiled from: Python 3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]
+# Embedded file name: scripts/client/gui/Scaleform/daapi/view/meta/BattleQueueMeta.py
+from gui.Scaleform.framework.entities.View import View
+
+class BattleQueueMeta(View):
+
+    def startClick(self):
+        self._printOverrideError('startClick')
+        return
+
+    def exitClick(self):
+        self._printOverrideError('exitClick')
+        return
+
+    def onEscape(self):
+        self._printOverrideError('onEscape')
+        return
+
+    def as_setTimerS(self, textLabel, timeLabel):
+        if self._isDAAPIInited():
+            return self.flashObject.as_setTimer(textLabel, timeLabel)
+        return
+
+    def as_setTypeInfoS(self, data):
+        if self._isDAAPIInited():
+            return self.flashObject.as_setTypeInfo(data)
+        return
+
+    def as_setPlayersS(self, text):
+        if self._isDAAPIInited():
+            return self.flashObject.as_setPlayers(text)
+        return
+
+    def as_setDPS(self, dataProvider):
+        if self._isDAAPIInited():
+            return self.flashObject.as_setDP(dataProvider)
+        return
+
+    def as_showStartS(self, vis):
+        if self._isDAAPIInited():
+            return self.flashObject.as_showStart(vis)
+        return
+
+    def as_showExitS(self, vis):
+        if self._isDAAPIInited():
+            return self.flashObject.as_showExit(vis)
+        return
+
+
+return

@@ -1,0 +1,160 @@
+217           0 LOAD_NAME                0 (__name__)
+              3 STORE_NAME               1 (__module__)
+
+219           6 LOAD_CONST               0 (0.5)
+              9 STORE_NAME               2 (_PP_RANDOM_ADJUSTMENT_MAX)
+
+220          12 LOAD_CONST               0 (0.5)
+             15 STORE_NAME               3 (_PP_RANDOM_ADJUSTMENT_MIN)
+
+222          18 LOAD_NAME                4 (math)
+             21 LOAD_ATTR                5 (pi)
+             24 LOAD_CONST               1 (2.0)
+             27 BINARY_TRUE_DIVIDE  
+             28 LOAD_CONST               2 (1e-05)
+             31 BINARY_SUBTRACT     
+             32 STORE_NAME               6 (_MAX_HIT_ANGLE_BOUND)
+
+225          35 LOAD_NAME                7 (_SHOT_RESULT)
+             38 LOAD_ATTR                8 (NOT_PIERCED)
+             41 STORE_NAME               9 (_CRIT_ONLY_SHOT_RESULT)
+
+227          44 LOAD_NAME               10 (namedtuple)
+             47 LOAD_CONST               3 ('shellExtraData')
+
+231          50 LOAD_CONST              20 (('hasNormalization', 'mayRicochet', 'checkCaliberForRicochet', 'hasPenetrationLoss'))
+             53 CALL_FUNCTION            2
+             56 STORE_NAME              11 (shellExtraData)
+
+233          59 BUILD_MAP                5
+
+234          62 LOAD_NAME               11 (shellExtraData)
+             65 LOAD_NAME               12 (True)
+             68 LOAD_NAME               12 (True)
+             71 LOAD_NAME               12 (True)
+             74 LOAD_NAME               13 (False)
+             77 CALL_FUNCTION            4
+             80 LOAD_NAME               14 (constants)
+             83 LOAD_ATTR               15 (SHELL_TYPES)
+             86 LOAD_ATTR               16 (ARMOR_PIERCING)
+             89 STORE_MAP           
+
+235          90 LOAD_NAME               11 (shellExtraData)
+             93 LOAD_NAME               12 (True)
+             96 LOAD_NAME               12 (True)
+             99 LOAD_NAME               12 (True)
+            102 LOAD_NAME               13 (False)
+            105 CALL_FUNCTION            4
+            108 LOAD_NAME               14 (constants)
+            111 LOAD_ATTR               15 (SHELL_TYPES)
+            114 LOAD_ATTR               17 (ARMOR_PIERCING_CR)
+            117 STORE_MAP           
+
+236         118 LOAD_NAME               11 (shellExtraData)
+            121 LOAD_NAME               12 (True)
+            124 LOAD_NAME               13 (False)
+            127 LOAD_NAME               13 (False)
+            130 LOAD_NAME               13 (False)
+            133 CALL_FUNCTION            4
+            136 LOAD_NAME               14 (constants)
+            139 LOAD_ATTR               15 (SHELL_TYPES)
+            142 LOAD_ATTR               18 (ARMOR_PIERCING_HE)
+            145 STORE_MAP           
+
+237         146 LOAD_NAME               11 (shellExtraData)
+            149 LOAD_NAME               13 (False)
+            152 LOAD_NAME               12 (True)
+            155 LOAD_NAME               13 (False)
+            158 LOAD_NAME               12 (True)
+            161 CALL_FUNCTION            4
+            164 LOAD_NAME               14 (constants)
+            167 LOAD_ATTR               15 (SHELL_TYPES)
+            170 LOAD_ATTR               19 (HOLLOW_CHARGE)
+            173 STORE_MAP           
+
+238         174 LOAD_NAME               11 (shellExtraData)
+            177 LOAD_NAME               13 (False)
+            180 LOAD_NAME               13 (False)
+            183 LOAD_NAME               13 (False)
+            186 LOAD_NAME               13 (False)
+            189 CALL_FUNCTION            4
+            192 LOAD_NAME               14 (constants)
+            195 LOAD_ATTR               15 (SHELL_TYPES)
+            198 LOAD_ATTR               20 (HIGH_EXPLOSIVE)
+            201 STORE_MAP           
+            202 STORE_NAME              21 (_SHELL_EXTRA_DATA)
+
+241         205 LOAD_NAME               22 (dependency)
+            208 LOAD_ATTR               23 (descriptor)
+            211 LOAD_NAME               24 (IBattleSessionProvider)
+            214 CALL_FUNCTION            1
+            217 STORE_NAME              25 (_CrosshairShotResults__sessionProvider)
+
+243         220 LOAD_NAME               26 (classmethod)
+            223 LOAD_CONST               8 (<code object _getAllCollisionDetails at 00000000036890B0, file "scripts/client/AvatarInputHandler/gun_marker_ctrl.py", line 243>)
+            226 MAKE_FUNCTION            0
+            229 CALL_FUNCTION            1
+            232 STORE_NAME              27 (_getAllCollisionDetails)
+
+249         235 LOAD_NAME               26 (classmethod)
+            238 LOAD_CONST               9 (<code object _computePiercingPowerRandomization at 0000000003689130, file "scripts/client/AvatarInputHandler/gun_marker_ctrl.py", line 249>)
+            241 MAKE_FUNCTION            0
+            244 CALL_FUNCTION            1
+            247 STORE_NAME              28 (_computePiercingPowerRandomization)
+
+255         250 LOAD_NAME               26 (classmethod)
+            253 LOAD_CONST              10 (<code object _shouldRicochet at 00000000036891B0, file "scripts/client/AvatarInputHandler/gun_marker_ctrl.py", line 255>)
+            256 MAKE_FUNCTION            0
+            259 CALL_FUNCTION            1
+            262 STORE_NAME              29 (_shouldRicochet)
+
+280         265 LOAD_NAME               26 (classmethod)
+            268 LOAD_CONST              11 (<code object _computePenetrationArmor at 0000000003689230, file "scripts/client/AvatarInputHandler/gun_marker_ctrl.py", line 280>)
+            271 MAKE_FUNCTION            0
+            274 CALL_FUNCTION            1
+            277 STORE_NAME              30 (_computePenetrationArmor)
+
+312         280 LOAD_NAME               26 (classmethod)
+
+313         283 LOAD_CONST              12 (0)
+            286 LOAD_CONST              13 (1)
+            289 LOAD_CONST              14 (<code object getShotResult at 00000000036893B0, file "scripts/client/AvatarInputHandler/gun_marker_ctrl.py", line 312>)
+            292 MAKE_FUNCTION            2
+            295 CALL_FUNCTION            1
+            298 STORE_NAME              31 (getShotResult)
+
+364         301 LOAD_NAME               26 (classmethod)
+            304 LOAD_CONST              15 (<code object __shotResultModernHE at 0000000003689430, file "scripts/client/AvatarInputHandler/gun_marker_ctrl.py", line 364>)
+            307 MAKE_FUNCTION            0
+            310 CALL_FUNCTION            1
+            313 STORE_NAME              32 (_CrosshairShotResults__shotResultModernHE)
+
+445         316 LOAD_NAME               26 (classmethod)
+            319 LOAD_CONST              16 (<code object __shotResultDefault at 0000000003689530, file "scripts/client/AvatarInputHandler/gun_marker_ctrl.py", line 445>)
+            322 MAKE_FUNCTION            0
+            325 CALL_FUNCTION            1
+            328 STORE_NAME              33 (_CrosshairShotResults__shotResultDefault)
+
+548         331 LOAD_NAME               26 (classmethod)
+            334 LOAD_CONST              17 (<code object __isDestructibleComponent at 00000000036895B0, file "scripts/client/AvatarInputHandler/gun_marker_ctrl.py", line 548>)
+            337 MAKE_FUNCTION            0
+            340 CALL_FUNCTION            1
+            343 STORE_NAME              34 (_CrosshairShotResults__isDestructibleComponent)
+
+554         346 LOAD_NAME               26 (classmethod)
+            349 LOAD_CONST              18 (<code object __collectDebugPiercingData at 0000000003689630, file "scripts/client/AvatarInputHandler/gun_marker_ctrl.py", line 554>)
+            352 MAKE_FUNCTION            0
+            355 CALL_FUNCTION            1
+            358 STORE_NAME              35 (_CrosshairShotResults__collectDebugPiercingData)
+
+569         361 LOAD_NAME               26 (classmethod)
+
+570         364 LOAD_CONST              21 (None)
+            367 LOAD_CONST              21 (None)
+            370 LOAD_CONST              21 (None)
+            373 LOAD_CONST              19 (<code object __sendDebugInfo at 00000000036DA5B0, file "scripts/client/AvatarInputHandler/gun_marker_ctrl.py", line 569>)
+            376 MAKE_FUNCTION            3
+            379 CALL_FUNCTION            1
+            382 STORE_NAME              37 (_CrosshairShotResults__sendDebugInfo)
+            385 LOAD_LOCALS         
+            386 RETURN_VALUE        

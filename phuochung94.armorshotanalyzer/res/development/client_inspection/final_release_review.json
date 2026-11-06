@@ -1,0 +1,27 @@
+{
+  "submitted_to_reviewer": false, 
+  "gameface": {
+    "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\World of Tanks\\asia\\mods\\2.4.1.1\\net.openwg.gameface_1.2.2.wotmod", 
+    "sha256": "2bb65f28663e3ab34b5a1102a1bbd1f6e17a65e1f6a898a8645c4ab732b50184"
+  }, 
+  "client": [
+    "ASIA", 
+    "2.4.1.1", 
+    "991"
+  ], 
+  "package_crc_structure_and_content": "PASS", 
+  "artifact_tests": "PASS", 
+  "mod_and_openwg_privacy_static_audit": "PASS", 
+  "exact_runtime_file_count": 18, 
+  "in_game_validation": false, 
+  "mod": {
+    "path": "C:\\pademinune-AP_Calculator-2.2.0\\phuochung94.armorshotanalyzer-ASIA 2.4.1.1 #991.wotmod", 
+    "sha256": "067543dae046610c3b320eec2681506fa8b9edf384672d13683f3f7c23603c30"
+  }, 
+  "packaged_bytecode_test_count": 73, 
+  "bundle": {
+    "path": "C:\\pademinune-AP_Calculator-2.2.0\\UNZIP-phuochung94.armorshotanalyzer-ASIA 2.4.1.1 #991.zip", 
+    "sha256": "77f419d38f3fe5bde3cd50facc8b8596e6845be263e7c626a4717221e3476e65"
+  }, 
+  "stage": "C:\\pademinune-AP_Calculator-2.2.0\\pademinune-AP_Calculator-Windows\\res\\development\\client_inspection\\release-review-hkr4rnk9"
+}

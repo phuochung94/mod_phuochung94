@@ -1,0 +1,11 @@
+[
+    {
+        "type": "Layout",
+        "id": "R.mods.ap_calculator_2.views.APBattleView",
+        "path": "coui://gui/AP_Calculator_2/gameface/APBattleView.html",
+        "parameters": {
+            "entrance": "APBattleView",
+            "impl": "gameface"
+        }
+    }
+]

@@ -1,0 +1,621 @@
+('FILE', 'scripts/client/gui/Scaleform/daapi/view/common/settings/SettingsWindow.pyc')
+('<module>', (), ('__future__', 'absolute_import', 'future.utils', 'viewitems', 'Sound', 'functools', 'BattleReplay', 'BigWorld', 'WGC', 'VOIP', 'account_helpers', 'AccountSettings', 'account_helpers.AccountSettings', 'COLOR_SETTINGS_TAB_IDX', 'account_helpers.settings_core.ServerSettingsManager', 'LIMITED_UI_KEY', 'account_helpers.settings_core.settings_constants', 'SETTINGS_GROUP', 'constants', 'MISC_GUI_SETTINGS', 'debug_utils', 'LOG_DEBUG', 'LOG_WARNING', 'gui.Scaleform.daapi.settings.views', 'VIEW_ALIAS', 'account_helpers.counter_settings', 'getNewSettings', 'invalidateSettings', 'gui.Scaleform.framework.managers.loaders', 'SFViewLoadParams', 'gui.Scaleform.locale.RES_ICONS', 'RES_ICONS', 'gui.Scaleform.locale.SETTINGS', 'SETTINGS', 'gui', 'DialogsInterface', 'g_guiResetters', 'gui.limited_ui.lui_rules_storage', 'LuiRuleTypes', 'gui.shared', 'g_eventBus', 'events', 'EVENT_BUS_SCOPE', 'gui.shared.utils', 'flashObject2Dict', 'decorators', 'graphics', 'gui.Scaleform.daapi.view.meta.SettingsWindowMeta', 'SettingsWindowMeta', 'gui.Scaleform.daapi.view.common.settings.SettingsParams', 'SettingsParams', 'account_helpers.settings_core', 'settings_constants', 'account_helpers.settings_core.options', 'APPLY_METHOD', 'helpers', 'dependency', 'server_settings', 'messenger.m_constants', 'PROTO_TYPE', 'messenger.proto', 'proto_getter', 'gui.Scaleform.genConsts.SETTINGS_DIALOGS', 'SETTINGS_DIALOGS', 'gui.shared.formatters', 'icons', 'makeHtmlString', 'gui.impl', 'backport', 'gui.impl.gen', 'R', 'skeletons.account_helpers.settings_core', 'ISettingsCore', 'skeletons.gui.game_control', 'IAnonymizerController', 'ILimitedUIController', 'skeletons.gui.lobby_context', 'ILobbyContext', 'skeletons.gui.battle_hints.newbie_battle_hints_controller', 'INewbieBattleHintsController', 'uilogging.limited_ui.constants', 'LimitedUILogItem', 'LimitedUILogScreenParent', 'uilogging.limited_ui.loggers', 'LimitedUILogger', 'uilogging.newbie_hints.loggers', 'NewbieHintsSettingsUILogger', 'NewbieHintsSettingsTooltipsUILogger', 'GAMETITLE', 'GRAFICTITLE', 'SOUNDTITLE', 'KEYBOARDTITLE', 'CURSORTITLE', 'MARKERTITLE', 'FEEDBACK', 'OTHERTITLE', '_PAGES', 'dict', 'enumerate', '_PAGES_INDICES', '_g_lastTabIdx', '_getLastTabIndex', '_setLastTabIndex', '_delayCall', 'SettingsWindow'))
+('STRINGS', ['SettingsWindow'])
+('<module>.<genexpr>', ('.0',), ())
+('STRINGS', [])
+('<module>._getLastTabIndex', (), ('_g_lastTabIdx',))
+('STRINGS', [])
+ 63           0 LOAD_GLOBAL              0 (_g_lastTabIdx)
+              3 RETURN_VALUE        
+('<module>._setLastTabIndex', ('idx',), ('_g_lastTabIdx',))
+('STRINGS', [])
+ 68           0 LOAD_FAST                0 (idx)
+              3 STORE_GLOBAL             0 (_g_lastTabIdx)
+              6 LOAD_CONST               0 (None)
+              9 RETURN_VALUE        
+('<module>._delayCall', ('delay', 'function'), ('BattleReplay', 'g_replayCtrl', 'isPaused', 'BigWorld', 'callback'))
+('STRINGS', [])
+('<module>.SettingsWindow', (), ('__name__', '__module__', 'dependency', 'descriptor', 'IAnonymizerController', 'anonymizerController', 'ISettingsCore', 'settingsCore', 'ILobbyContext', 'lobbyContext', 'ILimitedUIController', 'limitedUIController', 'None', '__init__', 'proto_getter', 'PROTO_TYPE', 'BW_CHAT2', 'bwProto', '_SettingsWindow__getSettingsParam', '_SettingsWindow__getSettings', 'False', '_SettingsWindow__commitSettings', '_SettingsWindow__apply', '_SettingsWindow__restartGame', '_populate', '_update', '_dispose', 'onTabSelected', 'onCounterTargetVisited', 'onSettingsChange', 'applySettings', '_applySettings', 'onWindowClose', 'onRecreateDevice', 'autodetectQuality', 'autodetectAcousticType', 'autodetectPhysicsSoundQuality', 'canSelectAcousticType', 'canSelectPhysicsSoundQuality', 'startVOIPTest', 'decorators', 'adisp_process', 'updateCaptureDevices', 'altVoicesPreview', 'altBulbPreview', 'artyBulbPreview', 'stopVoicesPreview', 'stopAltBulbPreview', 'stopArtyBulbPreview', 'isSoundModeValid', 'showWarningDialog', 'openGammaWizard', 'openColorSettings', 'restartNewbieBattleHints', '_SettingsWindow__updateInterfaceScale', '_SettingsWindow__isGraphicsPresetApplied', '_SettingsWindow__onSettingsChanged', 'server_settings', 'serverSettingsChangeListener', 'MISC_GUI_SETTINGS', '_SettingsWindow__onServerSettingChanged', '_SettingsWindow__refreshSettings', '_SettingsWindow__setColorGradingTechnique', '_SettingsWindow__setLimitedUISettingVisibility', '_SettingsWindow__applyLimitedUISetting', '_SettingsWindow__setPhysicsSoundVisibility', '_SettingsWindow__updateNewSettingsCounters'))
+('STRINGS', ['updateCaptureDevices'])
+('<module>.SettingsWindow.__init__', ('self', 'ctx'), ('super', 'SettingsWindow', '__init__', 'get', 'True', '_SettingsWindow__redefinedKeyModeEnabled', 'False', '_SettingsWindow__isBattleSettings', 'NewbieHintsSettingsTooltipsUILogger', '_SettingsWindow__uiNewbieHintsTooltipLogger', 'NewbieHintsSettingsUILogger', '_SettingsWindow__uiNewbieHintsLogger', 'None', '_setLastTabIndex', 'SettingsParams', 'params'))
+('STRINGS', ['redefinedKeyMode', 'isBattleSettings', 'tabIndex'])
+('<module>.SettingsWindow.bwProto', ('self',), ('None',))
+('STRINGS', [])
+('<module>.SettingsWindow.__getSettingsParam', ('self',), ('params', 'getGameSettings', 'SETTINGS_GROUP', 'GAME_SETTINGS', 'getGraphicsSettings', 'GRAPHICS_SETTINGS', 'getSoundSettings', 'SOUND_SETTINGS', 'getControlsSettings', 'CONTROLS_SETTINGS', 'getAimSettings', 'AIM_SETTINGS', 'getMarkersSettings', 'MARKERS_SETTINGS', 'getFeedbackSettings', 'FEEDBACK_SETTINGS'))
+('STRINGS', [])
+('<module>.SettingsWindow.__getSettings', ('self',), ('_SettingsWindow__getSettingsParam', 'viewitems'))
+('STRINGS', [])
+('<module>.SettingsWindow.__getSettings.<dictcomp>', ('.0',), ('keys', 'values'))
+('STRINGS', ['keys', 'values'])
+('<module>.SettingsWindow.__commitSettings', ('self', 'settings', 'restartApproved', 'isCloseWnd'), ('None', '_SettingsWindow__apply'))
+('STRINGS', [])
+('<module>.SettingsWindow.__apply', ('self', 'settings', 'restartApproved', 'isCloseWnd'), ('LOG_DEBUG', 'False', 'settingsCore', 'isDeviseRecreated', 'True', 'isChangesConfirmed', 'params', 'apply', 'settings_constants', 'GRAPHICS', 'INTERFACE_SCALE', '_SettingsWindow__updateInterfaceScale', '_SettingsWindow__isGraphicsPresetApplied', 'onWindowClose', 'BigWorld', 'savePreferences', '_delayCall', '_SettingsWindow__restartGame', 'onRecreateDevice', 'functools', 'partial', 'changeVideoMode', 'getWindowMode', 'DialogsInterface', 'showI18nInfoDialog', 'None'))
+('STRINGS', ['Settings window: apply settings', 'graphicsPresetNotInstalled'])
+('<module>.SettingsWindow.__restartGame', ('self',), ('BigWorld', 'savePreferences', 'WGC', 'notifyRestart', 'worldDrawEnabled', 'False', 'restartGame'))
+('STRINGS', [])
+('<module>.SettingsWindow._populate', ('self',), ('super', 'SettingsWindow', '_populate', 'SETTINGS', 'FEEDBACK_TAB_DAMAGEINDICATOR', 'VIEW_ALIAS', 'FEEDBACK_DAMAGE_INDICATOR', 'FEEDBACK_TAB_EVENTSINFO', 'FEEDBACK_BATTLE_EVENTS', 'FEEDBACK_TAB_DAMAGELOGPANEL', 'FEEDBACK_DAMAGE_LOG', 'FEEDBACK_TAB_BATTLEBORDERMAP', 'FEEDBACK_BATTLE_BORDER_MAP', 'FEEDBACK_TAB_QUESTSPROGRESS', 'FEEDBACK_QUESTS_PROGRESS', 'as_setFeedbackDataProviderS', '_SettingsWindow__redefinedKeyModeEnabled', 'BigWorld', 'wg_setRedefineKeysMode', 'True', 'params', 'getMonitorSettings', '_SettingsWindow__currentSettings', '_update', 'settingsCore', 'onSettingsChanged', '_SettingsWindow__onSettingsChanged', 'anonymizerController', 'onStateChanged', '_SettingsWindow__refreshSettings', 'lobbyContext', 'getServerSettings', 'onServerSettingsChange', '_SettingsWindow__onServerSettingChanged', 'g_guiResetters', 'add', 'onRecreateDevice', 'wg_setAdapterOrdinalNotifyCallback', '_SettingsWindow__uiNewbieHintsTooltipLogger', 'initialize'))
+('STRINGS', ['label', 'linkage'])
+200           0 LOAD_GLOBAL              0 (super)
+              3 LOAD_GLOBAL              1 (SettingsWindow)
+              6 LOAD_FAST                0 (self)
+              9 CALL_FUNCTION            2
+             12 LOAD_ATTR                2 (_populate)
+             15 CALL_FUNCTION            0
+             18 POP_TOP             
+
+203          19 BUILD_MAP                2
+
+204          22 LOAD_GLOBAL              3 (SETTINGS)
+             25 LOAD_ATTR                4 (FEEDBACK_TAB_DAMAGEINDICATOR)
+             28 LOAD_CONST               1 ('label')
+             31 STORE_MAP           
+
+205          32 LOAD_GLOBAL              5 (VIEW_ALIAS)
+             35 LOAD_ATTR                6 (FEEDBACK_DAMAGE_INDICATOR)
+             38 LOAD_CONST               2 ('linkage')
+             41 STORE_MAP           
+
+207          42 BUILD_MAP                2
+
+208          45 LOAD_GLOBAL              3 (SETTINGS)
+             48 LOAD_ATTR                7 (FEEDBACK_TAB_EVENTSINFO)
+             51 LOAD_CONST               1 ('label')
+             54 STORE_MAP           
+
+209          55 LOAD_GLOBAL              5 (VIEW_ALIAS)
+             58 LOAD_ATTR                8 (FEEDBACK_BATTLE_EVENTS)
+             61 LOAD_CONST               2 ('linkage')
+             64 STORE_MAP           
+
+211          65 BUILD_MAP                2
+
+212          68 LOAD_GLOBAL              3 (SETTINGS)
+             71 LOAD_ATTR                9 (FEEDBACK_TAB_DAMAGELOGPANEL)
+             74 LOAD_CONST               1 ('label')
+             77 STORE_MAP           
+
+213          78 LOAD_GLOBAL              5 (VIEW_ALIAS)
+             81 LOAD_ATTR               10 (FEEDBACK_DAMAGE_LOG)
+             84 LOAD_CONST               2 ('linkage')
+             87 STORE_MAP           
+
+215          88 BUILD_MAP                2
+
+216          91 LOAD_GLOBAL              3 (SETTINGS)
+             94 LOAD_ATTR               11 (FEEDBACK_TAB_BATTLEBORDERMAP)
+             97 LOAD_CONST               1 ('label')
+            100 STORE_MAP           
+
+217         101 LOAD_GLOBAL              5 (VIEW_ALIAS)
+            104 LOAD_ATTR               12 (FEEDBACK_BATTLE_BORDER_MAP)
+            107 LOAD_CONST               2 ('linkage')
+            110 STORE_MAP           
+
+219         111 BUILD_MAP                2
+
+220         114 LOAD_GLOBAL              3 (SETTINGS)
+            117 LOAD_ATTR               13 (FEEDBACK_TAB_QUESTSPROGRESS)
+            120 LOAD_CONST               1 ('label')
+            123 STORE_MAP           
+
+221         124 LOAD_GLOBAL              5 (VIEW_ALIAS)
+            127 LOAD_ATTR               14 (FEEDBACK_QUESTS_PROGRESS)
+            130 LOAD_CONST               2 ('linkage')
+            133 STORE_MAP           
+            134 BUILD_LIST               5
+            137 STORE_FAST               1 (dataVO)
+
+225         140 LOAD_FAST                0 (self)
+            143 LOAD_ATTR               15 (as_setFeedbackDataProviderS)
+            146 LOAD_FAST                1 (dataVO)
+            149 CALL_FUNCTION            1
+            152 POP_TOP             
+
+229         153 LOAD_FAST                0 (self)
+            156 LOAD_ATTR               16 (_SettingsWindow__redefinedKeyModeEnabled)
+            159 POP_JUMP_IF_FALSE      178
+
+230         162 LOAD_GLOBAL             17 (BigWorld)
+            165 LOAD_ATTR               18 (wg_setRedefineKeysMode)
+            168 LOAD_GLOBAL             19 (True)
+            171 CALL_FUNCTION            1
+            174 POP_TOP             
+            175 JUMP_FORWARD             0 (to 178)
+
+232     >>  178 LOAD_FAST                0 (self)
+            181 LOAD_ATTR               20 (params)
+            184 LOAD_ATTR               21 (getMonitorSettings)
+            187 CALL_FUNCTION            0
+            190 LOAD_FAST                0 (self)
+            193 STORE_ATTR              22 (_SettingsWindow__currentSettings)
+
+233         196 LOAD_FAST                0 (self)
+            199 LOAD_ATTR               23 (_update)
+            202 CALL_FUNCTION            0
+            205 POP_TOP             
+
+235         206 LOAD_FAST                0 (self)
+            209 LOAD_ATTR               24 (settingsCore)
+            212 DUP_TOP             
+            213 LOAD_ATTR               25 (onSettingsChanged)
+            216 LOAD_FAST                0 (self)
+            219 LOAD_ATTR               26 (_SettingsWindow__onSettingsChanged)
+            222 INPLACE_ADD         
+            223 ROT_TWO             
+            224 STORE_ATTR              25 (onSettingsChanged)
+
+236         227 LOAD_FAST                0 (self)
+            230 LOAD_ATTR               27 (anonymizerController)
+            233 DUP_TOP             
+            234 LOAD_ATTR               28 (onStateChanged)
+            237 LOAD_FAST                0 (self)
+            240 LOAD_ATTR               29 (_SettingsWindow__refreshSettings)
+            243 INPLACE_ADD         
+            244 ROT_TWO             
+            245 STORE_ATTR              28 (onStateChanged)
+
+237         248 LOAD_FAST                0 (self)
+            251 LOAD_ATTR               30 (lobbyContext)
+            254 LOAD_ATTR               31 (getServerSettings)
+            257 CALL_FUNCTION            0
+            260 DUP_TOP             
+            261 LOAD_ATTR               32 (onServerSettingsChange)
+            264 LOAD_FAST                0 (self)
+            267 LOAD_ATTR               33 (_SettingsWindow__onServerSettingChanged)
+            270 INPLACE_ADD         
+            271 ROT_TWO             
+            272 STORE_ATTR              32 (onServerSettingsChange)
+
+239         275 LOAD_GLOBAL             34 (g_guiResetters)
+            278 LOAD_ATTR               35 (add)
+            281 LOAD_FAST                0 (self)
+            284 LOAD_ATTR               36 (onRecreateDevice)
+            287 CALL_FUNCTION            1
+            290 POP_TOP             
+
+240         291 LOAD_GLOBAL             17 (BigWorld)
+            294 LOAD_ATTR               37 (wg_setAdapterOrdinalNotifyCallback)
+            297 LOAD_FAST                0 (self)
+            300 LOAD_ATTR               36 (onRecreateDevice)
+            303 CALL_FUNCTION            1
+            306 POP_TOP             
+
+241         307 LOAD_FAST                0 (self)
+            310 LOAD_ATTR               38 (_SettingsWindow__uiNewbieHintsTooltipLogger)
+            313 LOAD_ATTR               39 (initialize)
+            316 CALL_FUNCTION            0
+            319 POP_TOP             
+            320 LOAD_CONST               0 (None)
+            323 RETURN_VALUE        
+('<module>.SettingsWindow._update', ('self',), ('as_setDataS', '_SettingsWindow__getSettings', '_SettingsWindow__updateNewSettingsCounters', 'as_updateVideoSettingsS', 'params', 'getMonitorSettings', 'as_openTabS', '_getLastTabIndex', '_SettingsWindow__setColorGradingTechnique', '_SettingsWindow__setLimitedUISettingVisibility', '_SettingsWindow__setPhysicsSoundVisibility'))
+('STRINGS', [])
+('<module>.SettingsWindow._dispose', ('self',), ('_SettingsWindow__redefinedKeyModeEnabled', 'BigWorld', 'wg_setRedefineKeysMode', 'False', 'g_guiResetters', 'discard', 'onRecreateDevice', 'wg_setAdapterOrdinalNotifyCallback', 'None', 'stopVoicesPreview', 'stopAltBulbPreview', 'stopArtyBulbPreview', 'anonymizerController', 'onStateChanged', '_SettingsWindow__refreshSettings', 'settingsCore', 'onSettingsChanged', '_SettingsWindow__onSettingsChanged', 'lobbyContext', 'getServerSettings', 'onServerSettingsChange', '_SettingsWindow__onServerSettingChanged', '_SettingsWindow__uiNewbieHintsTooltipLogger', 'finalize', 'super', 'SettingsWindow', '_dispose'))
+('STRINGS', [])
+256           0 LOAD_FAST                0 (self)
+              3 LOAD_ATTR                0 (_SettingsWindow__redefinedKeyModeEnabled)
+              6 POP_JUMP_IF_FALSE       25
+
+257           9 LOAD_GLOBAL              1 (BigWorld)
+             12 LOAD_ATTR                2 (wg_setRedefineKeysMode)
+             15 LOAD_GLOBAL              3 (False)
+             18 CALL_FUNCTION            1
+             21 POP_TOP             
+             22 JUMP_FORWARD             0 (to 25)
+
+259     >>   25 LOAD_GLOBAL              4 (g_guiResetters)
+             28 LOAD_ATTR                5 (discard)
+             31 LOAD_FAST                0 (self)
+             34 LOAD_ATTR                6 (onRecreateDevice)
+             37 CALL_FUNCTION            1
+             40 POP_TOP             
+
+260          41 LOAD_GLOBAL              1 (BigWorld)
+             44 LOAD_ATTR                7 (wg_setAdapterOrdinalNotifyCallback)
+             47 LOAD_CONST               0 (None)
+             50 CALL_FUNCTION            1
+             53 POP_TOP             
+
+262          54 LOAD_FAST                0 (self)
+             57 LOAD_ATTR                9 (stopVoicesPreview)
+             60 CALL_FUNCTION            0
+             63 POP_TOP             
+
+263          64 LOAD_FAST                0 (self)
+             67 LOAD_ATTR               10 (stopAltBulbPreview)
+             70 CALL_FUNCTION            0
+             73 POP_TOP             
+
+264          74 LOAD_FAST                0 (self)
+             77 LOAD_ATTR               11 (stopArtyBulbPreview)
+             80 CALL_FUNCTION            0
+             83 POP_TOP             
+
+266          84 LOAD_FAST                0 (self)
+             87 LOAD_ATTR               12 (anonymizerController)
+             90 DUP_TOP             
+             91 LOAD_ATTR               13 (onStateChanged)
+             94 LOAD_FAST                0 (self)
+             97 LOAD_ATTR               14 (_SettingsWindow__refreshSettings)
+            100 INPLACE_SUBTRACT    
+            101 ROT_TWO             
+            102 STORE_ATTR              13 (onStateChanged)
+
+267         105 LOAD_FAST                0 (self)
+            108 LOAD_ATTR               15 (settingsCore)
+            111 DUP_TOP             
+            112 LOAD_ATTR               16 (onSettingsChanged)
+            115 LOAD_FAST                0 (self)
+            118 LOAD_ATTR               17 (_SettingsWindow__onSettingsChanged)
+            121 INPLACE_SUBTRACT    
+            122 ROT_TWO             
+            123 STORE_ATTR              16 (onSettingsChanged)
+
+268         126 LOAD_FAST                0 (self)
+            129 LOAD_ATTR               18 (lobbyContext)
+            132 LOAD_ATTR               19 (getServerSettings)
+            135 CALL_FUNCTION            0
+            138 DUP_TOP             
+            139 LOAD_ATTR               20 (onServerSettingsChange)
+            142 LOAD_FAST                0 (self)
+            145 LOAD_ATTR               21 (_SettingsWindow__onServerSettingChanged)
+            148 INPLACE_SUBTRACT    
+            149 ROT_TWO             
+            150 STORE_ATTR              20 (onServerSettingsChange)
+
+269         153 LOAD_FAST                0 (self)
+            156 LOAD_ATTR               22 (_SettingsWindow__uiNewbieHintsTooltipLogger)
+            159 LOAD_ATTR               23 (finalize)
+            162 CALL_FUNCTION            0
+            165 POP_TOP             
+
+271         166 LOAD_GLOBAL             24 (super)
+            169 LOAD_GLOBAL             25 (SettingsWindow)
+            172 LOAD_FAST                0 (self)
+            175 CALL_FUNCTION            2
+            178 LOAD_ATTR               26 (_dispose)
+            181 CALL_FUNCTION            0
+            184 POP_TOP             
+            185 LOAD_CONST               0 (None)
+            188 RETURN_VALUE        
+('<module>.SettingsWindow.onTabSelected', ('self', 'tabId'), ('SETTINGS', 'SOUNDTITLE', 'bwProto', 'voipController', 'invalidateInitialization', '_PAGES_INDICES', '_setLastTabIndex', 'LOG_WARNING'))
+('STRINGS', ["Unknown settings window's page id"])
+274           0 LOAD_FAST                1 (tabId)
+              3 LOAD_GLOBAL              0 (SETTINGS)
+              6 LOAD_ATTR                1 (SOUNDTITLE)
+              9 COMPARE_OP               2 (==)
+             12 POP_JUMP_IF_FALSE       34
+
+275          15 LOAD_FAST                0 (self)
+             18 LOAD_ATTR                2 (bwProto)
+             21 LOAD_ATTR                3 (voipController)
+             24 LOAD_ATTR                4 (invalidateInitialization)
+             27 CALL_FUNCTION            0
+             30 POP_TOP             
+             31 JUMP_FORWARD             0 (to 34)
+
+277     >>   34 LOAD_FAST                1 (tabId)
+             37 LOAD_GLOBAL              5 (_PAGES_INDICES)
+             40 COMPARE_OP               6 (in)
+             43 POP_JUMP_IF_FALSE       63
+
+278          46 LOAD_GLOBAL              6 (_setLastTabIndex)
+             49 LOAD_GLOBAL              5 (_PAGES_INDICES)
+             52 LOAD_FAST                1 (tabId)
+             55 BINARY_SUBSCR       
+             56 CALL_FUNCTION            1
+             59 POP_TOP             
+             60 JUMP_FORWARD            13 (to 76)
+
+280     >>   63 LOAD_GLOBAL              7 (LOG_WARNING)
+             66 LOAD_CONST               1 ("Unknown settings window's page id")
+             69 LOAD_FAST                1 (tabId)
+             72 CALL_FUNCTION            2
+             75 POP_TOP             
+        >>   76 LOAD_CONST               0 (None)
+             79 RETURN_VALUE        
+('<module>.SettingsWindow.onCounterTargetVisited', ('self', 'tabName', 'subTabName', 'controlsIDs'), ('invalidateSettings', '_SettingsWindow__updateNewSettingsCounters'))
+('STRINGS', [])
+('<module>.SettingsWindow.onSettingsChange', ('self', 'settingName', 'settingValue'), ('flashObject2Dict', 'LOG_DEBUG', 'params', 'preview'))
+('STRINGS', ['onSettingsChange'])
+('<module>.SettingsWindow.applySettings', ('self', 'settings', 'isCloseWnd'), ('_applySettings', 'flashObject2Dict'))
+('STRINGS', [])
+('<module>.SettingsWindow._applySettings', ('self', 'settings', 'isCloseWnd'), ('params', 'getApplyMethod', 'APPLY_METHOD', 'RESTART', 'DialogsInterface', 'showI18nConfirmDialog', 'DELAYED', 'NEXT_BATTLE', '_SettingsWindow__isBattleSettings', 'True'))
+('STRINGS', ['graphicsPresetRestartConfirmation', 'graphicsPresetDelayedConfirmation', 'nextBattleOptionConfirmation'])
+('<module>.SettingsWindow._applySettings.confirmHandler', ('isOk',), ('isDisposed', 'as_ConfirmationOfApplicationS', '_SettingsWindow__commitSettings', 'params', 'revert', '_update'))
+('STRINGS', [])
+('<module>.SettingsWindow.onWindowClose', ('self',), ('params', 'revert', 'startVOIPTest', 'False', 'destroy'))
+('STRINGS', [])
+('<module>.SettingsWindow.onRecreateDevice', ('self',), ('params', 'getMonitorSettings', '_SettingsWindow__currentSettings', 'settings_constants', 'GRAPHICS', 'DYNAMIC_RENDERER', 'copy', 'None', 'as_updateVideoSettingsS'))
+('STRINGS', [])
+('<module>.SettingsWindow.autodetectQuality', ('self',), ('BigWorld', 'autoDetectGraphicsSettings', 'onRecreateDevice'))
+('STRINGS', [])
+('<module>.SettingsWindow.autodetectAcousticType', ('self',), ('settingsCore', 'options', 'getSetting', 'settings_constants', 'SOUND', 'SOUND_SPEAKERS', 'getSystemPreset'))
+('STRINGS', [])
+('<module>.SettingsWindow.autodetectPhysicsSoundQuality', ('self',), ('settings_constants', 'SoundPhysicsQuality', 'ORDER', 'Sound', 'getRecommendedPreset', 'DISABLE'))
+('STRINGS', [])
+('<module>.SettingsWindow.canSelectAcousticType', ('self', 'index'), ('int', 'settingsCore', 'options', 'getSetting', 'settings_constants', 'SOUND', 'SOUND_SPEAKERS', 'isPresetSupportedByIndex', 'DialogsInterface', 'showI18nConfirmDialog', 'False', 'True'))
+('STRINGS', ['soundSpeakersPresetDoesNotMatch'])
+('<module>.SettingsWindow.canSelectAcousticType._apply', ('result',), ('isDisposed', 'LOG_DEBUG', 'as_onSoundSpeakersPresetApplyS'))
+('STRINGS', ['Player result'])
+('<module>.SettingsWindow.canSelectPhysicsSoundQuality', ('self', 'optionIdx'), ('settingsCore', 'options', 'getSetting', 'settings_constants', 'SOUND', 'PHYSICS_QUALITY', 'isPresetSupportedByIdx', 'DialogsInterface', 'showI18nConfirmDialog', 'False', 'True'))
+('STRINGS', ['physicsSoundQualityDoesNotMatch'])
+('<module>.SettingsWindow.canSelectPhysicsSoundQuality._apply', ('result',), ('isDisposed', 'LOG_DEBUG', 'as_onPhysicsSoundQualityApplyS'))
+('STRINGS', ['PhysicsSoundQuality: Player result'])
+('<module>.SettingsWindow.startVOIPTest', ('self', 'isVoiceTestStarted'), ('LOG_DEBUG', 'str', 'VOIP', 'getVOIPManager', 'enterTestChannel', 'leaveTestChannel', 'False'))
+('STRINGS', ['Vivox test: %s'])
+('<module>.SettingsWindow.updateCaptureDevices', ('self',), ('bwProto', 'voipController', 'requestCaptureDevices', 'settingsCore', 'options', 'getSetting', 'settings_constants', 'SOUND', 'CAPTURE_DEVICES', 'as_setCaptureDevicesS', 'get', 'getOptions'))
+('STRINGS', [])
+('<module>.SettingsWindow.altVoicesPreview', ('self',), ('settingsCore', 'options', 'getSetting', 'settings_constants', 'SOUND', 'ALT_VOICES', 'playPreviewSound'))
+('STRINGS', [])
+430           0 LOAD_FAST                0 (self)
+              3 LOAD_ATTR                0 (settingsCore)
+              6 LOAD_ATTR                1 (options)
+              9 LOAD_ATTR                2 (getSetting)
+             12 LOAD_GLOBAL              3 (settings_constants)
+             15 LOAD_ATTR                4 (SOUND)
+             18 LOAD_ATTR                5 (ALT_VOICES)
+             21 CALL_FUNCTION            1
+             24 STORE_FAST               1 (setting)
+
+431          27 LOAD_FAST                1 (setting)
+             30 LOAD_ATTR                6 (playPreviewSound)
+             33 CALL_FUNCTION            0
+             36 POP_TOP             
+             37 LOAD_CONST               0 (None)
+             40 RETURN_VALUE        
+('<module>.SettingsWindow.altBulbPreview', ('self', 'sampleID'), ('settingsCore', 'options', 'getSetting', 'settings_constants', 'SOUND', 'DETECTION_ALERT_SOUND', 'playPreviewSound'))
+('STRINGS', [])
+434           0 LOAD_FAST                0 (self)
+              3 LOAD_ATTR                0 (settingsCore)
+              6 LOAD_ATTR                1 (options)
+              9 LOAD_ATTR                2 (getSetting)
+             12 LOAD_GLOBAL              3 (settings_constants)
+             15 LOAD_ATTR                4 (SOUND)
+             18 LOAD_ATTR                5 (DETECTION_ALERT_SOUND)
+             21 CALL_FUNCTION            1
+             24 STORE_FAST               2 (setting)
+
+435          27 LOAD_FAST                2 (setting)
+             30 LOAD_ATTR                6 (playPreviewSound)
+             33 LOAD_FAST                1 (sampleID)
+             36 CALL_FUNCTION            1
+             39 POP_TOP             
+             40 LOAD_CONST               0 (None)
+             43 RETURN_VALUE        
+('<module>.SettingsWindow.artyBulbPreview', ('self', 'sampleID'), ('settingsCore', 'options', 'getSetting', 'settings_constants', 'SOUND', 'ARTY_SHOT_ALERT_SOUND', 'playPreviewSound'))
+('STRINGS', [])
+438           0 LOAD_FAST                0 (self)
+              3 LOAD_ATTR                0 (settingsCore)
+              6 LOAD_ATTR                1 (options)
+              9 LOAD_ATTR                2 (getSetting)
+             12 LOAD_GLOBAL              3 (settings_constants)
+             15 LOAD_ATTR                4 (SOUND)
+             18 LOAD_ATTR                5 (ARTY_SHOT_ALERT_SOUND)
+             21 CALL_FUNCTION            1
+             24 STORE_FAST               2 (setting)
+
+439          27 LOAD_FAST                2 (setting)
+             30 LOAD_ATTR                6 (playPreviewSound)
+             33 LOAD_FAST                1 (sampleID)
+             36 CALL_FUNCTION            1
+             39 POP_TOP             
+             40 LOAD_CONST               0 (None)
+             43 RETURN_VALUE        
+('<module>.SettingsWindow.stopVoicesPreview', ('self',), ('settingsCore', 'options', 'getSetting', 'settings_constants', 'SOUND', 'ALT_VOICES', 'clearPreviewSound'))
+('STRINGS', [])
+442           0 LOAD_FAST                0 (self)
+              3 LOAD_ATTR                0 (settingsCore)
+              6 LOAD_ATTR                1 (options)
+              9 LOAD_ATTR                2 (getSetting)
+             12 LOAD_GLOBAL              3 (settings_constants)
+             15 LOAD_ATTR                4 (SOUND)
+             18 LOAD_ATTR                5 (ALT_VOICES)
+             21 CALL_FUNCTION            1
+             24 STORE_FAST               1 (setting)
+
+443          27 LOAD_FAST                1 (setting)
+             30 LOAD_ATTR                6 (clearPreviewSound)
+             33 CALL_FUNCTION            0
+             36 POP_TOP             
+             37 LOAD_CONST               0 (None)
+             40 RETURN_VALUE        
+('<module>.SettingsWindow.stopAltBulbPreview', ('self',), ('settingsCore', 'options', 'getSetting', 'settings_constants', 'SOUND', 'DETECTION_ALERT_SOUND', 'clearPreviewSound'))
+('STRINGS', [])
+446           0 LOAD_FAST                0 (self)
+              3 LOAD_ATTR                0 (settingsCore)
+              6 LOAD_ATTR                1 (options)
+              9 LOAD_ATTR                2 (getSetting)
+             12 LOAD_GLOBAL              3 (settings_constants)
+             15 LOAD_ATTR                4 (SOUND)
+             18 LOAD_ATTR                5 (DETECTION_ALERT_SOUND)
+             21 CALL_FUNCTION            1
+             24 STORE_FAST               1 (setting)
+
+447          27 LOAD_FAST                1 (setting)
+             30 LOAD_ATTR                6 (clearPreviewSound)
+             33 CALL_FUNCTION            0
+             36 POP_TOP             
+             37 LOAD_CONST               0 (None)
+             40 RETURN_VALUE        
+('<module>.SettingsWindow.stopArtyBulbPreview', ('self',), ('settingsCore', 'options', 'getSetting', 'settings_constants', 'SOUND', 'ARTY_SHOT_ALERT_SOUND', 'clearPreviewSound'))
+('STRINGS', [])
+450           0 LOAD_FAST                0 (self)
+              3 LOAD_ATTR                0 (settingsCore)
+              6 LOAD_ATTR                1 (options)
+              9 LOAD_ATTR                2 (getSetting)
+             12 LOAD_GLOBAL              3 (settings_constants)
+             15 LOAD_ATTR                4 (SOUND)
+             18 LOAD_ATTR                5 (ARTY_SHOT_ALERT_SOUND)
+             21 CALL_FUNCTION            1
+             24 STORE_FAST               1 (setting)
+
+451          27 LOAD_FAST                1 (setting)
+             30 LOAD_ATTR                6 (clearPreviewSound)
+             33 CALL_FUNCTION            0
+             36 POP_TOP             
+             37 LOAD_CONST               0 (None)
+             40 RETURN_VALUE        
+('<module>.SettingsWindow.isSoundModeValid', ('self',), ('settingsCore', 'options', 'getSetting', 'settings_constants', 'SOUND', 'ALT_VOICES', 'isSoundModeValid'))
+('STRINGS', [])
+('<module>.SettingsWindow.showWarningDialog', ('self', 'dialogID', 'settings', 'isCloseWnd'), ('None', 'functools', 'partial', 'applySettings', 'False', 'SETTINGS_DIALOGS', 'MINIMAP_ALPHA_NOTIFICATION', 'icons', 'alert', 'makeHtmlString', 'backport', 'text', 'R', 'strings', 'dialogs', 'minimapAlphaNotification', 'message', 'LIMITED_UI_OFF_NOTIFICATION', 'limitedUIOffNotification', '_SettingsWindow__applyLimitedUISetting', 'DialogsInterface', 'showI18nConfirmDialog'))
+('STRINGS', ['icon', 'html_templates:lobby/dialogs', 'minimapAlphaNotification', 'message', 'alert', 'limitedUIOffNotification'])
+('<module>.SettingsWindow.showWarningDialog.callback', ('isOk',), ('isDisposed', 'as_confirmWarningDialogS', 'onWindowClose'))
+('STRINGS', [])
+('<module>.SettingsWindow.openGammaWizard', ('self', 'x', 'y', 'size'), ('g_eventBus', 'handleEvent', 'events', 'LoadViewEvent', 'SFViewLoadParams', 'VIEW_ALIAS', 'GAMMA_WIZARD', 'EVENT_BUS_SCOPE', 'DEFAULT'))
+('STRINGS', ['ctx', 'x', 'y', 'size'])
+('<module>.SettingsWindow.openColorSettings', ('self',), ('g_eventBus', 'handleEvent', 'events', 'LoadViewEvent', 'SFViewLoadParams', 'VIEW_ALIAS', 'COLOR_SETTING', 'EVENT_BUS_SCOPE', 'DEFAULT'))
+('STRINGS', [])
+('<module>.SettingsWindow.restartNewbieBattleHints', ('self',), ('dependency', 'instance', 'INewbieBattleHintsController', 'resetHistory', '_SettingsWindow__uiNewbieHintsLogger', 'resetButtonClicked'))
+('STRINGS', [])
+('<module>.SettingsWindow.__updateInterfaceScale', ('self',), ('as_updateVideoSettingsS', 'params', 'getMonitorSettings'))
+('STRINGS', [])
+('<module>.SettingsWindow.__isGraphicsPresetApplied', ('self', 'settings'), ('BigWorld', 'getGraphicsPresetPropertyNames', 'False', 'True', 'as_isPresetAppliedS'))
+('STRINGS', [])
+('<module>.SettingsWindow.__onSettingsChanged', ('self', 'diff'), ('settings_constants', 'GRAPHICS', 'COLOR_GRADING_TECHNIQUE', '_SettingsWindow__setColorGradingTechnique', 'get', 'None', 'LIMITED_UI_KEY', '_SettingsWindow__setLimitedUISettingVisibility', '_SettingsWindow__uiNewbieHintsLogger', 'onSettingsChanged'))
+('STRINGS', [])
+('<module>.SettingsWindow.__onServerSettingChanged', ('self', 'diff'), ('_SettingsWindow__setPhysicsSoundVisibility',))
+('STRINGS', [])
+('<module>.SettingsWindow.__refreshSettings', ('self',), ('_update',))
+('STRINGS', [])
+('<module>.SettingsWindow.__setColorGradingTechnique', ('self', 'value'), ('AccountSettings', 'getSettings', 'COLOR_SETTINGS_TAB_IDX', 'None', 'graphics', 'isRendererPipelineDeferred', 'SETTINGS', 'GRAPHICSSETTINGSOPTIONS_NONE', 'RES_ICONS', 'MAPS_ICONS_SETTINGS_COLOR_GRADING_TECHNIQUE_NONE', 'COLORSETTINGS_TAB_CUSTOMSETTINGS', 'MAPS_ICONS_SETTINGS_COLOR_GRADING_TECHNIQUE_RANDOM', 'settingsCore', 'options', 'getSetting', 'settings_constants', 'GRAPHICS', 'COLOR_GRADING_TECHNIQUE', 'getGraphicSettingImages', 'get', 'getOptions', 'as_setColorGradingTechniqueS'))
+('STRINGS', ['data', 'label'])
+('<module>.SettingsWindow.__setLimitedUISettingVisibility', ('self',), ('as_showLimitedUISettingS', 'limitedUIController', 'isUserSettingsMayShow'))
+('STRINGS', [])
+('<module>.SettingsWindow.__applyLimitedUISetting', ('self',), ('limitedUIController', 'completeAllRulesByTypes', 'LuiRuleTypes', 'NOVICE', 'LimitedUILogger', 'handleClickOnce', 'LimitedUILogItem', 'DISABLE_LIMITED_UI_BUTTON', 'LimitedUILogScreenParent', 'SETTINGS_WINDOW'))
+('STRINGS', [])
+('<module>.SettingsWindow.__setPhysicsSoundVisibility', ('self',), ('lobbyContext', 'getServerSettings', 'isPhysicsSoundEnabled', 'as_showPhysicsSoundSettingsS', '_SettingsWindow__updateNewSettingsCounters'))
+('STRINGS', [])
+('<module>.SettingsWindow.__updateNewSettingsCounters', ('self',), ('getNewSettings', 'as_setCountersDataS'))
+('STRINGS', [])
+('FILE', 'scripts/client/gui/Scaleform/daapi/view/meta/SettingsWindowMeta.pyc')
+('<module>', (), ('gui.Scaleform.framework.entities.abstract.AbstractWindowView', 'AbstractWindowView', 'SettingsWindowMeta'))
+('STRINGS', ['SettingsWindowMeta'])
+('<module>.SettingsWindowMeta', (), ('__name__', '__module__', 'applySettings', 'autodetectQuality', 'startVOIPTest', 'updateCaptureDevices', 'onSettingsChange', 'altVoicesPreview', 'altBulbPreview', 'artyBulbPreview', 'isSoundModeValid', 'showWarningDialog', 'onTabSelected', 'onCounterTargetVisited', 'autodetectAcousticType', 'canSelectAcousticType', 'openGammaWizard', 'openColorSettings', 'restartNewbieBattleHints', 'autodetectPhysicsSoundQuality', 'canSelectPhysicsSoundQuality', 'as_setDataS', 'as_setCaptureDevicesS', 'as_updateVideoSettingsS', 'as_confirmWarningDialogS', 'as_showLimitedUISettingS', 'as_showPhysicsSoundSettingsS', 'as_ConfirmationOfApplicationS', 'as_openTabS', 'as_setGraphicsPresetS', 'as_isPresetAppliedS', 'as_setCountersDataS', 'as_onSoundSpeakersPresetApplyS', 'as_disableControlS', 'as_setColorGradingTechniqueS', 'as_setFeedbackDataProviderS', 'as_setDisabledTabsOverlayS', 'as_onPhysicsSoundQualityApplyS'))
+('STRINGS', [])
+('<module>.SettingsWindowMeta.applySettings', ('self', 'settings', 'isCloseWnd'), ('_printOverrideError',))
+('STRINGS', ['applySettings'])
+('<module>.SettingsWindowMeta.autodetectQuality', ('self',), ('_printOverrideError',))
+('STRINGS', ['autodetectQuality'])
+('<module>.SettingsWindowMeta.startVOIPTest', ('self', 'isVoiceTestStarted'), ('_printOverrideError',))
+('STRINGS', ['startVOIPTest'])
+('<module>.SettingsWindowMeta.updateCaptureDevices', ('self',), ('_printOverrideError',))
+('STRINGS', ['updateCaptureDevices'])
+('<module>.SettingsWindowMeta.onSettingsChange', ('self', 'controlID', 'controlVal'), ('_printOverrideError',))
+('STRINGS', ['onSettingsChange'])
+('<module>.SettingsWindowMeta.altVoicesPreview', ('self',), ('_printOverrideError',))
+('STRINGS', ['altVoicesPreview'])
+ 33           0 LOAD_FAST                0 (self)
+              3 LOAD_ATTR                0 (_printOverrideError)
+              6 LOAD_CONST               1 ('altVoicesPreview')
+              9 CALL_FUNCTION            1
+             12 POP_TOP             
+             13 LOAD_CONST               0 (None)
+             16 RETURN_VALUE        
+('<module>.SettingsWindowMeta.altBulbPreview', ('self', 'sampleID'), ('_printOverrideError',))
+('STRINGS', ['altBulbPreview'])
+ 37           0 LOAD_FAST                0 (self)
+              3 LOAD_ATTR                0 (_printOverrideError)
+              6 LOAD_CONST               1 ('altBulbPreview')
+              9 CALL_FUNCTION            1
+             12 POP_TOP             
+             13 LOAD_CONST               0 (None)
+             16 RETURN_VALUE        
+('<module>.SettingsWindowMeta.artyBulbPreview', ('self', 'sampleID'), ('_printOverrideError',))
+('STRINGS', ['artyBulbPreview'])
+ 41           0 LOAD_FAST                0 (self)
+              3 LOAD_ATTR                0 (_printOverrideError)
+              6 LOAD_CONST               1 ('artyBulbPreview')
+              9 CALL_FUNCTION            1
+             12 POP_TOP             
+             13 LOAD_CONST               0 (None)
+             16 RETURN_VALUE        
+('<module>.SettingsWindowMeta.isSoundModeValid', ('self',), ('_printOverrideError',))
+('STRINGS', ['isSoundModeValid'])
+('<module>.SettingsWindowMeta.showWarningDialog', ('self', 'dialogID', 'settings', 'isCloseWnd'), ('_printOverrideError',))
+('STRINGS', ['showWarningDialog'])
+('<module>.SettingsWindowMeta.onTabSelected', ('self', 'tabId'), ('_printOverrideError',))
+('STRINGS', ['onTabSelected'])
+ 53           0 LOAD_FAST                0 (self)
+              3 LOAD_ATTR                0 (_printOverrideError)
+              6 LOAD_CONST               1 ('onTabSelected')
+              9 CALL_FUNCTION            1
+             12 POP_TOP             
+             13 LOAD_CONST               0 (None)
+             16 RETURN_VALUE        
+('<module>.SettingsWindowMeta.onCounterTargetVisited', ('self', 'viewId', 'subViewId', 'controlsIDs'), ('_printOverrideError',))
+('STRINGS', ['onCounterTargetVisited'])
+('<module>.SettingsWindowMeta.autodetectAcousticType', ('self',), ('_printOverrideError',))
+('STRINGS', ['autodetectAcousticType'])
+('<module>.SettingsWindowMeta.canSelectAcousticType', ('self', 'index'), ('_printOverrideError',))
+('STRINGS', ['canSelectAcousticType'])
+('<module>.SettingsWindowMeta.openGammaWizard', ('self', 'x', 'y', 'size'), ('_printOverrideError',))
+('STRINGS', ['openGammaWizard'])
+('<module>.SettingsWindowMeta.openColorSettings', ('self',), ('_printOverrideError',))
+('STRINGS', ['openColorSettings'])
+('<module>.SettingsWindowMeta.restartNewbieBattleHints', ('self',), ('_printOverrideError',))
+('STRINGS', ['restartNewbieBattleHints'])
+('<module>.SettingsWindowMeta.autodetectPhysicsSoundQuality', ('self',), ('_printOverrideError',))
+('STRINGS', ['autodetectPhysicsSoundQuality'])
+('<module>.SettingsWindowMeta.canSelectPhysicsSoundQuality', ('self', 'optionIdx'), ('_printOverrideError',))
+('STRINGS', ['canSelectPhysicsSoundQuality'])
+('<module>.SettingsWindowMeta.as_setDataS', ('self', 'settingsData'), ('_isDAAPIInited', 'flashObject', 'as_setData'))
+('STRINGS', [])
+('<module>.SettingsWindowMeta.as_setCaptureDevicesS', ('self', 'captureDeviceIdx', 'devicesData'), ('_isDAAPIInited', 'flashObject', 'as_setCaptureDevices'))
+('STRINGS', [])
+('<module>.SettingsWindowMeta.as_updateVideoSettingsS', ('self', 'videoSettings'), ('_isDAAPIInited', 'flashObject', 'as_updateVideoSettings'))
+('STRINGS', [])
+('<module>.SettingsWindowMeta.as_confirmWarningDialogS', ('self', 'isOk', 'dialogID'), ('_isDAAPIInited', 'flashObject', 'as_confirmWarningDialog'))
+('STRINGS', [])
+('<module>.SettingsWindowMeta.as_showLimitedUISettingS', ('self', 'isVisible'), ('_isDAAPIInited', 'flashObject', 'as_showLimitedUISetting'))
+('STRINGS', [])
+('<module>.SettingsWindowMeta.as_showPhysicsSoundSettingsS', ('self', 'isVisible'), ('_isDAAPIInited', 'flashObject', 'as_showPhysicsSoundSettings'))
+('STRINGS', [])
+('<module>.SettingsWindowMeta.as_ConfirmationOfApplicationS', ('self', 'isApplied'), ('_isDAAPIInited', 'flashObject', 'as_ConfirmationOfApplication'))
+('STRINGS', [])
+('<module>.SettingsWindowMeta.as_openTabS', ('self', 'tabIndex'), ('_isDAAPIInited', 'flashObject', 'as_openTab'))
+('STRINGS', [])
+127           0 LOAD_FAST                0 (self)
+              3 LOAD_ATTR                0 (_isDAAPIInited)
+              6 CALL_FUNCTION            0
+              9 POP_JUMP_IF_FALSE       28
+
+128          12 LOAD_FAST                0 (self)
+             15 LOAD_ATTR                1 (flashObject)
+             18 LOAD_ATTR                2 (as_openTab)
+             21 LOAD_FAST                1 (tabIndex)
+             24 CALL_FUNCTION            1
+             27 RETURN_VALUE        
+        >>   28 LOAD_CONST               0 (None)
+             31 RETURN_VALUE        
+('<module>.SettingsWindowMeta.as_setGraphicsPresetS', ('self', 'presetNum'), ('_isDAAPIInited', 'flashObject', 'as_setGraphicsPreset'))
+('STRINGS', [])
+('<module>.SettingsWindowMeta.as_isPresetAppliedS', ('self',), ('_isDAAPIInited', 'flashObject', 'as_isPresetApplied'))
+('STRINGS', [])
+('<module>.SettingsWindowMeta.as_setCountersDataS', ('self', 'countersData'), ('_isDAAPIInited', 'flashObject', 'as_setCountersData'))
+('STRINGS', [])
+('<module>.SettingsWindowMeta.as_onSoundSpeakersPresetApplyS', ('self', 'isApply'), ('_isDAAPIInited', 'flashObject', 'as_onSoundSpeakersPresetApply'))
+('STRINGS', [])
+('<module>.SettingsWindowMeta.as_disableControlS', ('self', 'tabId', 'controlID', 'subTabId'), ('_isDAAPIInited', 'flashObject', 'as_disableControl'))
+('STRINGS', [])
+('<module>.SettingsWindowMeta.as_setColorGradingTechniqueS', ('self', 'icon', 'label'), ('_isDAAPIInited', 'flashObject', 'as_setColorGradingTechnique'))
+('STRINGS', [])
+('<module>.SettingsWindowMeta.as_setFeedbackDataProviderS', ('self', 'dataProvider'), ('_isDAAPIInited', 'flashObject', 'as_setFeedbackDataProvider'))
+('STRINGS', [])
+('<module>.SettingsWindowMeta.as_setDisabledTabsOverlayS', ('self', 'tabIndexes', 'text'), ('_isDAAPIInited', 'flashObject', 'as_setDisabledTabsOverlay'))
+('STRINGS', [])
+176           0 LOAD_FAST                0 (self)
+              3 LOAD_ATTR                0 (_isDAAPIInited)
+              6 CALL_FUNCTION            0
+              9 POP_JUMP_IF_FALSE       31
+
+177          12 LOAD_FAST                0 (self)
+             15 LOAD_ATTR                1 (flashObject)
+             18 LOAD_ATTR                2 (as_setDisabledTabsOverlay)
+             21 LOAD_FAST                1 (tabIndexes)
+             24 LOAD_FAST                2 (text)
+             27 CALL_FUNCTION            2
+             30 RETURN_VALUE        
+        >>   31 LOAD_CONST               0 (None)
+             34 RETURN_VALUE        
+('<module>.SettingsWindowMeta.as_onPhysicsSoundQualityApplyS', ('self', 'isApply'), ('_isDAAPIInited', 'flashObject', 'as_onPhysicsSoundQualityApply'))
+('STRINGS', [])

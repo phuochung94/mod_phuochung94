@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MoEProgressView</title>
+        <!-- Same-origin coui:// assets: `crossorigin` is inert and `defer` is not a valid
+             <link> attribute; the module <script> defers by spec. Kept minimal.
+             ONLY MoEProgress.css (+ its vertical twin) -- deliberately NOT MoEBattle.css too:
+             that would drag the whole corner overlay's rules into this document for the sake of
+             one @font-face, which MoEProgress.css now carries itself (and which the vertical
+             sheet therefore does not re-declare).
+             BOTH ORIENTATIONS' SHEETS ARE LINKED, ALWAYS. MoEProgress.js picks the composition at
+             MOUNT off the VM's `vertical` (mod_settings.progress_bar_orientation) -- a branch, not
+             a second registered layout.
+             That is safe because the two sheets are namespace-DISJOINT (.mp-* vs .mpv-*); the only
+             shared subjects are `body`, `#moe-bar-box` and `#moe-bar-root`, and the vertical sheet
+             scopes exactly those under a `body.mpv` class the JS adds only when it goes vertical.
+             ORDER MATTERS: the vertical sheet comes SECOND so its rules are later in the cascade --
+             it out-specifies the horizontal ones anyway (see its header), but source order is the
+             tiebreak if a future rule ever lands at equal specificity. -->
+        <link rel="stylesheet" href="MoEProgress.css" />
+        <link rel="stylesheet" href="MoEProgressVertical.css" />
+    </head>
+    <body>
+        <!-- Registered Gameface view (gui/gen_resources/com.phuochung94.moe_calculator.json) opened as
+             a CONTENT-SIZED (NOT full-screen), input-transparent window centred over the battle
+             HUD -- see bridge/progress_view.py, and battle_view.py for why full-screen is
+             rejected (it steals the whole-screen mouse hit-test under a raised cursor). The bar
+             root (#moe-bar-root) is created + populated by MoEProgress.js, which reads this
+             view's own root ViewModel (ProgressVM) via a bare ModelObserver().
+             #moe-bar-box below is the ONLY static markup, and it is NOT part of the bar: it is a
+             pure SIZING SHIM giving this document in-flow content. #moe-bar-root is
+             position:absolute, so it contributes no content size; with an empty body the engine's
+             size calculation had nothing to measure, timed out, and applied its "Set the default
+             view size" fallback (256x256) AFTER the JS's resizeViewRem -- clobbering it
+             (live-observed). It must live HERE and not be JS-created: it has to exist at the FIRST
+             layout pass. Sized in MoEProgress.css to exactly the surface; the abspos bar root
+             overlays it, so no tuned geometry changes.
+             THE BOX DOES NOT PREVENT THE TIMEOUT -- this comment used to claim it did, and a live
+             re-measure disproved it: the box is present, in-flow and exactly 380x92, and the
+             `Size calculation timeout` plus its 256x256 clobber still fire. MoEProgress.js's
+             re-assert after that deadline (SURFACE_REASSERT_MS) is the only fix and is load-bearing;
+             the JS also keeps the bar hidden until it lands (surfaceSettled), or an early Alt peek
+             reveals a cropped bar ~142px too high. -->
+        <div id="moe-bar-box"></div>
+        <script type="module" src="MoEProgress.js"></script>
+    </body>
+</html>

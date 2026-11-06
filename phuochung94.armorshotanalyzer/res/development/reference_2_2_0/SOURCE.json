@@ -1,0 +1,9 @@
+{
+  "provided_file": "C:\\Users\\phuochung94\\Downloads\\pademinune-AP_Calculator-2.2.0.wotmod",
+  "archive_sha256": "0fcf470511febe755b6b3996210a0430d00af0f5fdc05ec1bc4d389fa99823aa",
+  "extracted": {
+    "ap_hooks.pyc": "4fdb83a570db9e1fb386259ed443201904e3372128566bb637c457fc8f0c4a6f",
+    "ap_math.pyc": "d6834760afbd66abc92bbdb3d5bf88c0ec7c515cd29f80b3c992e8311acff24b"
+  },
+  "usage": "Offline reference and isolated math tests only. Never installed or initialized."
+}

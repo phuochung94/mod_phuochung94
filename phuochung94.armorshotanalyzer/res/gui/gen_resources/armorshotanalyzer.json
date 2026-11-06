@@ -1,0 +1,11 @@
+[
+    {
+        "type": "Layout",
+        "id": "R.mods.armorshotanalyzer.views.ArmorShotAnalyzerBattleView",
+        "path": "coui://gui/ArmorShotAnalyzer/gameface/ArmorShotAnalyzerBattleView.html",
+        "parameters": {
+            "entrance": "ArmorShotAnalyzerBattleView",
+            "impl": "gameface"
+        }
+    }
+]

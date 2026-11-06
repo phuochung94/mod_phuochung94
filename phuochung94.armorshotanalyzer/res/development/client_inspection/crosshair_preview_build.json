@@ -1,0 +1,10 @@
+{
+  "native_sha256": "24dd87ff9b505cb42b854140276b246f853747e0b6619d7be11bb14f4c5d5019",
+  "anchor_twips": [
+    10180,
+    5560
+  ],
+  "preview_sprite": 225,
+  "original_actionscript_unchanged": true,
+  "limitations": "Static sample in native AimSettings, not a live penetration calculation"
+}

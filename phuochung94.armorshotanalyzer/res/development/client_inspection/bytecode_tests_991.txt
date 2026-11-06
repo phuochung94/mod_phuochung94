@@ -1,0 +1,43 @@
+test_all_shell_labels (client_overlay_tests.CalculationTests) ... ok
+test_ap_has_no_heat_air_gap_penalty (client_overlay_tests.CalculationTests) ... ok
+test_compact_probability_and_spaced_format (client_overlay_tests.CalculationTests) ... ok
+test_duplicate_collide_once_does_not_apply_gap_twice (client_overlay_tests.CalculationTests) ... ok
+test_empty_collisions (client_overlay_tests.CalculationTests) ... ok
+test_exhausted_jet_is_zero (client_overlay_tests.CalculationTests) ... ok
+test_he_that_cannot_pass_shield (client_overlay_tests.CalculationTests) ... ok
+test_heat_screen_does_not_imply_no_penetration (client_overlay_tests.CalculationTests) ... ok
+test_heat_spaced_armor_reverses_air_gap_loss (client_overlay_tests.CalculationTests) ... ok
+test_hesh_modern_he_direct_armor_and_rng (client_overlay_tests.CalculationTests) ... ok
+test_hesh_shield_blocked_is_full_penetration_only (client_overlay_tests.CalculationTests) ... ok
+test_hesh_spaced_armor_uses_he_shield_factor_without_heat_loss (client_overlay_tests.CalculationTests) ... ok
+test_modern_he_screen_multiplier (client_overlay_tests.CalculationTests) ... ok
+test_multiple_heat_gaps (client_overlay_tests.CalculationTests) ... ok
+test_near_zero_does_not_say_impossible (client_overlay_tests.CalculationTests) ... ok
+test_no_secondary_heat_ricochet (client_overlay_tests.CalculationTests) ... ok
+test_ricochet (client_overlay_tests.CalculationTests) ... ok
+test_rng_bounds_and_nonstandard_shell (client_overlay_tests.CalculationTests) ... ok
+test_track_only_cannot_damage_hull (client_overlay_tests.CalculationTests) ... ok
+test_unknown_material_is_not_faked (client_overlay_tests.CalculationTests) ... ok
+test_angle_stays_hidden_after_settings_refresh (client_overlay_tests.IntegrationTests) ... ok
+test_compiled_entrypoint_installs_once (client_overlay_tests.IntegrationTests) ... ok
+test_disabled_mod_hides_extra_row (client_overlay_tests.IntegrationTests) ... ok
+test_he_zero_penetration_has_unknown_damage (client_overlay_tests.IntegrationTests) ... ok
+test_heat_screen_updates_effective_armor_and_color (client_overlay_tests.IntegrationTests) ... ok
+test_hesh_uses_modern_he_wrapper_and_preserves_result (client_overlay_tests.IntegrationTests) ... ok
+test_install_is_idempotent (client_overlay_tests.IntegrationTests) ... ok
+test_loaded_ammo_changes_label_and_preserves_result (client_overlay_tests.IntegrationTests) ... ok
+test_modern_he_wrapper (client_overlay_tests.IntegrationTests) ... ok
+test_module_before_impenetrable_hull_is_orange (client_overlay_tests.IntegrationTests) ... ok
+test_nonpenetrating_heat_is_red (client_overlay_tests.IntegrationTests) ... ok
+test_penetrable_spaced_armor_uses_original_gradient (client_overlay_tests.IntegrationTests) ... ok
+test_penetrable_track_module_without_hull_is_orange (client_overlay_tests.IntegrationTests) ... ok
+test_ricochet_remains_red (client_overlay_tests.IntegrationTests) ... ok
+test_single_status_prioritizes_no_hull_over_spaced (client_overlay_tests.IntegrationTests) ... ok
+test_unknown_data_stays_grey (client_overlay_tests.IntegrationTests) ... ok
+test_unreachable_module_is_not_marked_damage_possible (client_overlay_tests.IntegrationTests) ... ok
+test_unsupported_client_data_fails_without_changing_result (client_overlay_tests.IntegrationTests) ... ok
+
+----------------------------------------------------------------------
+Ran 38 tests in 0.006s
+
+OK

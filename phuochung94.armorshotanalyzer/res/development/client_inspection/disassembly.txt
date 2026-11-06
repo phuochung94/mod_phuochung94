@@ -1,0 +1,1387 @@
+('FILE', 'C:\\pademinune-AP_Calculator-2.2.0\\pademinune-AP_Calculator-Windows\\res\\development\\client_inspection\\gun_marker_ctrl.pyc')
+('<module>._StandardShotResult.getShotResult', ('cls', 'gunMarker', 'excludeTeam', 'piercingMultiplier'), ('collData', 'None', '_SHOT_RESULT', 'UNDEFINED', 'entity', 'health', 'publicInfo', 'BigWorld', 'player', 'getVehicleDescriptor', 'gunInstallations', 'gunInstallationIndex', 'isMainInstallation', 'shot', 'gun', 'shots', 'piercingPower', 'maxDistance', 'position', 'getOwnVehiclePosition', 'length', 'computePiercingPowerAtDist', 'armor', 'NOT_PIERCED', 'LITTLE_PIERCED', 'GREAT_PIERCED'))
+180           0 LOAD_FAST                1 (gunMarker)
+              3 LOAD_ATTR                0 (collData)
+              6 STORE_FAST               4 (collision)
+
+181           9 LOAD_FAST                4 (collision)
+             12 LOAD_CONST               0 (None)
+             15 COMPARE_OP               8 (is)
+             18 POP_JUMP_IF_FALSE       28
+
+182          21 LOAD_GLOBAL              2 (_SHOT_RESULT)
+             24 LOAD_ATTR                3 (UNDEFINED)
+             27 RETURN_VALUE        
+
+184     >>   28 LOAD_FAST                4 (collision)
+             31 LOAD_ATTR                4 (entity)
+             34 STORE_FAST               5 (entity)
+
+185          37 LOAD_FAST                5 (entity)
+             40 LOAD_ATTR                5 (health)
+             43 LOAD_CONST               1 (0)
+             46 COMPARE_OP               1 (<=)
+             49 POP_JUMP_IF_TRUE        71
+             52 LOAD_FAST                5 (entity)
+             55 LOAD_ATTR                6 (publicInfo)
+             58 LOAD_CONST               2 ('team')
+             61 BINARY_SUBSCR       
+             62 LOAD_FAST                2 (excludeTeam)
+             65 COMPARE_OP               2 (==)
+             68 POP_JUMP_IF_FALSE       78
+
+186     >>   71 LOAD_GLOBAL              2 (_SHOT_RESULT)
+             74 LOAD_ATTR                3 (UNDEFINED)
+             77 RETURN_VALUE        
+
+188     >>   78 LOAD_GLOBAL              7 (BigWorld)
+             81 LOAD_ATTR                8 (player)
+             84 CALL_FUNCTION            0
+             87 STORE_FAST               6 (player)
+
+189          90 LOAD_FAST                6 (player)
+             93 LOAD_CONST               0 (None)
+             96 COMPARE_OP               8 (is)
+             99 POP_JUMP_IF_FALSE      109
+
+190         102 LOAD_GLOBAL              2 (_SHOT_RESULT)
+            105 LOAD_ATTR                3 (UNDEFINED)
+            108 RETURN_VALUE        
+
+192     >>  109 LOAD_FAST                6 (player)
+            112 LOAD_ATTR                9 (getVehicleDescriptor)
+            115 CALL_FUNCTION            0
+            118 STORE_FAST               7 (vDesc)
+
+193         121 LOAD_FAST                7 (vDesc)
+            124 LOAD_ATTR               10 (gunInstallations)
+            127 LOAD_FAST                1 (gunMarker)
+            130 LOAD_ATTR               11 (gunInstallationIndex)
+            133 BINARY_SUBSCR       
+            134 STORE_FAST               8 (gunInstallationSlot)
+
+194         137 LOAD_FAST                8 (gunInstallationSlot)
+            140 LOAD_ATTR               12 (isMainInstallation)
+            143 CALL_FUNCTION            0
+            146 POP_JUMP_IF_FALSE      158
+            149 LOAD_FAST                7 (vDesc)
+            152 LOAD_ATTR               13 (shot)
+            155 JUMP_FORWARD            13 (to 171)
+        >>  158 LOAD_FAST                8 (gunInstallationSlot)
+            161 LOAD_ATTR               14 (gun)
+            164 LOAD_ATTR               15 (shots)
+            167 LOAD_CONST               1 (0)
+            170 BINARY_SUBSCR       
+        >>  171 STORE_FAST               9 (shot)
+
+196         174 LOAD_FAST                9 (shot)
+            177 LOAD_ATTR               16 (piercingPower)
+            180 STORE_FAST              10 (ppDesc)
+
+197         183 LOAD_FAST                9 (shot)
+            186 LOAD_ATTR               17 (maxDistance)
+            189 STORE_FAST              11 (maxDist)
+
+199         192 LOAD_FAST                1 (gunMarker)
+            195 LOAD_ATTR               18 (position)
+            198 LOAD_FAST                6 (player)
+            201 LOAD_ATTR               19 (getOwnVehiclePosition)
+            204 CALL_FUNCTION            0
+            207 BINARY_SUBTRACT     
+            208 LOAD_ATTR               20 (length)
+            211 STORE_FAST              12 (dist)
+
+200         214 LOAD_GLOBAL             21 (computePiercingPowerAtDist)
+            217 LOAD_FAST               10 (ppDesc)
+            220 LOAD_FAST               12 (dist)
+            223 LOAD_FAST               11 (maxDist)
+            226 LOAD_FAST                3 (piercingMultiplier)
+            229 CALL_FUNCTION            4
+            232 STORE_FAST              13 (piercingPower)
+
+202         235 LOAD_CONST               3 (1000.0)
+            238 STORE_FAST              14 (piercingPercent)
+
+203         241 LOAD_FAST               13 (piercingPower)
+            244 LOAD_CONST               4 (0.0)
+            247 COMPARE_OP               4 (>)
+            250 POP_JUMP_IF_FALSE      287
+
+204         253 LOAD_FAST                4 (collision)
+            256 LOAD_ATTR               22 (armor)
+            259 STORE_FAST              15 (armor)
+
+205         262 LOAD_CONST               5 (100.0)
+            265 LOAD_FAST               15 (armor)
+            268 LOAD_FAST               13 (piercingPower)
+            271 BINARY_SUBTRACT     
+            272 LOAD_FAST               13 (piercingPower)
+            275 BINARY_TRUE_DIVIDE  
+            276 LOAD_CONST               5 (100.0)
+            279 BINARY_MULTIPLY     
+            280 BINARY_ADD          
+            281 STORE_FAST              14 (piercingPercent)
+            284 JUMP_FORWARD             0 (to 287)
+
+207     >>  287 LOAD_FAST               14 (piercingPercent)
+            290 LOAD_CONST               6 (150)
+            293 COMPARE_OP               5 (>=)
+            296 POP_JUMP_IF_FALSE      311
+
+208         299 LOAD_GLOBAL              2 (_SHOT_RESULT)
+            302 LOAD_ATTR               23 (NOT_PIERCED)
+            305 STORE_FAST              16 (result)
+            308 JUMP_FORWARD            49 (to 360)
+
+209     >>  311 LOAD_CONST               7 (90)
+            314 LOAD_FAST               14 (piercingPercent)
+            317 DUP_TOP             
+            318 ROT_THREE           
+            319 COMPARE_OP               0 (<)
+            322 JUMP_IF_FALSE_OR_POP   334
+            325 LOAD_CONST               6 (150)
+            328 COMPARE_OP               0 (<)
+            331 JUMP_FORWARD             2 (to 336)
+        >>  334 ROT_TWO             
+            335 POP_TOP             
+        >>  336 POP_JUMP_IF_FALSE      351
+
+210         339 LOAD_GLOBAL              2 (_SHOT_RESULT)
+            342 LOAD_ATTR               24 (LITTLE_PIERCED)
+            345 STORE_FAST              16 (result)
+            348 JUMP_FORWARD             9 (to 360)
+
+212     >>  351 LOAD_GLOBAL              2 (_SHOT_RESULT)
+            354 LOAD_ATTR               25 (GREAT_PIERCED)
+            357 STORE_FAST              16 (result)
+
+214     >>  360 LOAD_FAST               16 (result)
+            363 RETURN_VALUE        
+('<module>._CrosshairShotResults._shouldRicochet', ('cls', 'shell', 'hitAngleCos', 'matInfo'), ('mayRicochet', 'False', '_SHELL_EXTRA_DATA', 'kind', 'armor', 'type', 'ricochetAngleCos', 'checkCaliberForRicochet', 'True', 'caliber'))
+259           0 LOAD_FAST                3 (matInfo)
+              3 LOAD_ATTR                0 (mayRicochet)
+              6 POP_JUMP_IF_TRUE        13
+
+260           9 LOAD_GLOBAL              1 (False)
+             12 RETURN_VALUE        
+
+262     >>   13 LOAD_FAST                0 (cls)
+             16 LOAD_ATTR                2 (_SHELL_EXTRA_DATA)
+             19 LOAD_FAST                1 (shell)
+             22 LOAD_ATTR                3 (kind)
+             25 BINARY_SUBSCR       
+             26 STORE_FAST               4 (shellExtraData)
+
+263          29 LOAD_FAST                4 (shellExtraData)
+             32 LOAD_ATTR                0 (mayRicochet)
+             35 POP_JUMP_IF_TRUE        42
+
+264          38 LOAD_GLOBAL              1 (False)
+             41 RETURN_VALUE        
+
+266     >>   42 LOAD_FAST                3 (matInfo)
+             45 LOAD_ATTR                4 (armor)
+             48 STORE_FAST               5 (armor)
+
+267          51 LOAD_FAST                5 (armor)
+             54 LOAD_CONST               1 (0)
+             57 COMPARE_OP               2 (==)
+             60 POP_JUMP_IF_FALSE       67
+
+268          63 LOAD_GLOBAL              1 (False)
+             66 RETURN_VALUE        
+
+270     >>   67 LOAD_FAST                2 (hitAngleCos)
+             70 LOAD_FAST                1 (shell)
+             73 LOAD_ATTR                5 (type)
+             76 LOAD_ATTR                6 (ricochetAngleCos)
+             79 COMPARE_OP               1 (<=)
+             82 POP_JUMP_IF_FALSE      137
+
+271          85 LOAD_FAST                3 (matInfo)
+             88 LOAD_ATTR                7 (checkCaliberForRicochet)
+             91 POP_JUMP_IF_TRUE        98
+
+272          94 LOAD_GLOBAL              8 (True)
+             97 RETURN_VALUE        
+
+273     >>   98 LOAD_FAST                4 (shellExtraData)
+            101 LOAD_ATTR                7 (checkCaliberForRicochet)
+            104 POP_JUMP_IF_TRUE       111
+
+274         107 LOAD_GLOBAL              8 (True)
+            110 RETURN_VALUE        
+
+275     >>  111 LOAD_FAST                5 (armor)
+            114 LOAD_CONST               2 (3)
+            117 BINARY_MULTIPLY     
+            118 LOAD_FAST                1 (shell)
+            121 LOAD_ATTR                9 (caliber)
+            124 COMPARE_OP               5 (>=)
+            127 POP_JUMP_IF_FALSE      137
+
+276         130 LOAD_GLOBAL              8 (True)
+            133 RETURN_VALUE        
+            134 JUMP_FORWARD             0 (to 137)
+
+278     >>  137 LOAD_GLOBAL              1 (False)
+            140 RETURN_VALUE        
+('<module>._CrosshairShotResults._computePenetrationArmor', ('cls', 'shell', 'hitAngleCos', 'matInfo'), ('armor', 'useHitAngle', '_SHELL_EXTRA_DATA', 'kind', 'hasNormalization', 'type', 'normalizationAngle', 'checkCaliberForHitAngleNorm', 'caliber', 'math', 'acos', '_MAX_HIT_ANGLE_BOUND', 'cos', 'max'))
+284           0 LOAD_FAST                3 (matInfo)
+              3 LOAD_ATTR                0 (armor)
+              6 STORE_FAST               4 (armor)
+
+286           9 LOAD_FAST                3 (matInfo)
+             12 LOAD_ATTR                1 (useHitAngle)
+             15 POP_JUMP_IF_TRUE        22
+
+287          18 LOAD_FAST                4 (armor)
+             21 RETURN_VALUE        
+
+289     >>   22 LOAD_CONST               1 (0.0)
+             25 STORE_FAST               5 (normalizationAngle)
+
+290          28 LOAD_FAST                0 (cls)
+             31 LOAD_ATTR                2 (_SHELL_EXTRA_DATA)
+             34 LOAD_FAST                1 (shell)
+             37 LOAD_ATTR                3 (kind)
+             40 BINARY_SUBSCR       
+             41 STORE_FAST               6 (shellExtraData)
+
+291          44 LOAD_FAST                6 (shellExtraData)
+             47 LOAD_ATTR                4 (hasNormalization)
+             50 POP_JUMP_IF_FALSE       68
+
+292          53 LOAD_FAST                1 (shell)
+             56 LOAD_ATTR                5 (type)
+             59 LOAD_ATTR                6 (normalizationAngle)
+             62 STORE_FAST               5 (normalizationAngle)
+             65 JUMP_FORWARD             0 (to 68)
+
+294     >>   68 LOAD_FAST                5 (normalizationAngle)
+             71 LOAD_CONST               1 (0.0)
+             74 COMPARE_OP               4 (>)
+             77 POP_JUMP_IF_FALSE      252
+             80 LOAD_FAST                2 (hitAngleCos)
+             83 LOAD_CONST               2 (1.0)
+             86 COMPARE_OP               0 (<)
+             89 POP_JUMP_IF_FALSE      252
+
+295          92 LOAD_FAST                3 (matInfo)
+             95 LOAD_ATTR                7 (checkCaliberForHitAngleNorm)
+             98 POP_JUMP_IF_FALSE      167
+
+296         101 LOAD_FAST                1 (shell)
+            104 LOAD_ATTR                8 (caliber)
+            107 LOAD_FAST                4 (armor)
+            110 LOAD_CONST               3 (2)
+            113 BINARY_MULTIPLY     
+            114 DUP_TOP             
+            115 ROT_THREE           
+            116 COMPARE_OP               4 (>)
+            119 JUMP_IF_FALSE_OR_POP   131
+            122 LOAD_CONST               4 (0)
+            125 COMPARE_OP               4 (>)
+            128 JUMP_FORWARD             2 (to 133)
+        >>  131 ROT_TWO             
+            132 POP_TOP             
+        >>  133 POP_JUMP_IF_FALSE      167
+
+297         136 LOAD_FAST                5 (normalizationAngle)
+            139 LOAD_CONST               5 (1.4)
+            142 LOAD_FAST                1 (shell)
+            145 LOAD_ATTR                8 (caliber)
+            148 BINARY_MULTIPLY     
+            149 LOAD_FAST                4 (armor)
+            152 LOAD_CONST               3 (2)
+            155 BINARY_MULTIPLY     
+            156 BINARY_TRUE_DIVIDE  
+            157 INPLACE_MULTIPLY    
+            158 STORE_FAST               5 (normalizationAngle)
+            161 JUMP_ABSOLUTE          167
+            164 JUMP_FORWARD             0 (to 167)
+
+299     >>  167 LOAD_GLOBAL              9 (math)
+            170 LOAD_ATTR               10 (acos)
+            173 LOAD_FAST                2 (hitAngleCos)
+            176 CALL_FUNCTION            1
+            179 LOAD_FAST                5 (normalizationAngle)
+            182 BINARY_SUBTRACT     
+            183 STORE_FAST               7 (hitAngle)
+
+300         186 LOAD_FAST                7 (hitAngle)
+            189 LOAD_CONST               1 (0.0)
+            192 COMPARE_OP               0 (<)
+            195 POP_JUMP_IF_FALSE      207
+
+301         198 LOAD_CONST               2 (1.0)
+            201 STORE_FAST               2 (hitAngleCos)
+            204 JUMP_ABSOLUTE          252
+
+303     >>  207 LOAD_FAST                7 (hitAngle)
+            210 LOAD_FAST                0 (cls)
+            213 LOAD_ATTR               11 (_MAX_HIT_ANGLE_BOUND)
+            216 COMPARE_OP               4 (>)
+            219 POP_JUMP_IF_FALSE      234
+
+304         222 LOAD_FAST                0 (cls)
+            225 LOAD_ATTR               11 (_MAX_HIT_ANGLE_BOUND)
+            228 STORE_FAST               7 (hitAngle)
+            231 JUMP_FORWARD             0 (to 234)
+
+306     >>  234 LOAD_GLOBAL              9 (math)
+            237 LOAD_ATTR               12 (cos)
+            240 LOAD_FAST                7 (hitAngle)
+            243 CALL_FUNCTION            1
+            246 STORE_FAST               2 (hitAngleCos)
+            249 JUMP_FORWARD             0 (to 252)
+
+308     >>  252 LOAD_GLOBAL             13 (max)
+            255 LOAD_FAST                2 (hitAngleCos)
+            258 LOAD_CONST               6 (1e-05)
+            261 CALL_FUNCTION            2
+            264 STORE_FAST               2 (hitAngleCos)
+
+310         267 LOAD_FAST                4 (armor)
+            270 LOAD_FAST                2 (hitAngleCos)
+            273 BINARY_TRUE_DIVIDE  
+            274 RETURN_VALUE        
+('<module>._CrosshairShotResults.getShotResult', ('cls', 'gunMarker', 'excludeTeam', 'piercingMultiplier'), ('collData', 'None', '_CrosshairShotResults__sendDebugInfo', '_SHOT_RESULT', 'UNDEFINED', 'entity', 'isinstance', 'VehicleEntity', 'DestructibleEntity', 'health', 'publicInfo', 'BigWorld', 'player', 'getVehicleDescriptor', 'gunInstallations', 'gunInstallationIndex', 'isMainInstallation', 'shot', 'gun', 'shots', 'shell', 'piercingPower', 'maxDistance', 'position', 'getOwnVehiclePosition', 'length', 'computePiercingPowerAtDist', '_getAllCollisionDetails', 'direction', '_computePiercingPowerRandomization', 'kind', 'constants', 'SHELL_TYPES', 'HIGH_EXPLOSIVE', 'type', 'mechanics', 'SHELL_MECHANICS_TYPE', 'MODERN', '_CrosshairShotResults__shotResultModernHE', '_CrosshairShotResults__shotResultDefault'))
+321           0 LOAD_FAST                1 (gunMarker)
+              3 LOAD_ATTR                0 (collData)
+              6 STORE_FAST               4 (collision)
+
+322           9 LOAD_FAST                4 (collision)
+             12 LOAD_CONST               0 (None)
+             15 COMPARE_OP               8 (is)
+             18 POP_JUMP_IF_FALSE       44
+
+323          21 LOAD_FAST                0 (cls)
+             24 LOAD_ATTR                2 (_CrosshairShotResults__sendDebugInfo)
+             27 LOAD_FAST                1 (gunMarker)
+             30 BUILD_LIST               0
+             33 CALL_FUNCTION            2
+             36 POP_TOP             
+
+324          37 LOAD_GLOBAL              3 (_SHOT_RESULT)
+             40 LOAD_ATTR                4 (UNDEFINED)
+             43 RETURN_VALUE        
+
+326     >>   44 LOAD_FAST                4 (collision)
+             47 LOAD_ATTR                5 (entity)
+             50 STORE_FAST               5 (entity)
+
+327          53 LOAD_GLOBAL              6 (isinstance)
+             56 LOAD_FAST                5 (entity)
+             59 LOAD_GLOBAL              7 (VehicleEntity)
+             62 LOAD_GLOBAL              8 (DestructibleEntity)
+             65 BUILD_TUPLE              2
+             68 CALL_FUNCTION            2
+             71 POP_JUMP_IF_TRUE        97
+
+328          74 LOAD_FAST                0 (cls)
+             77 LOAD_ATTR                2 (_CrosshairShotResults__sendDebugInfo)
+             80 LOAD_FAST                1 (gunMarker)
+             83 BUILD_LIST               0
+             86 CALL_FUNCTION            2
+             89 POP_TOP             
+
+329          90 LOAD_GLOBAL              3 (_SHOT_RESULT)
+             93 LOAD_ATTR                4 (UNDEFINED)
+             96 RETURN_VALUE        
+
+331     >>   97 LOAD_FAST                5 (entity)
+            100 LOAD_ATTR                9 (health)
+            103 LOAD_CONST               1 (0)
+            106 COMPARE_OP               1 (<=)
+            109 POP_JUMP_IF_TRUE       131
+            112 LOAD_FAST                5 (entity)
+            115 LOAD_ATTR               10 (publicInfo)
+            118 LOAD_CONST               2 ('team')
+            121 BINARY_SUBSCR       
+            122 LOAD_FAST                2 (excludeTeam)
+            125 COMPARE_OP               2 (==)
+            128 POP_JUMP_IF_FALSE      154
+
+332     >>  131 LOAD_FAST                0 (cls)
+            134 LOAD_ATTR                2 (_CrosshairShotResults__sendDebugInfo)
+            137 LOAD_FAST                1 (gunMarker)
+            140 BUILD_LIST               0
+            143 CALL_FUNCTION            2
+            146 POP_TOP             
+
+333         147 LOAD_GLOBAL              3 (_SHOT_RESULT)
+            150 LOAD_ATTR                4 (UNDEFINED)
+            153 RETURN_VALUE        
+
+335     >>  154 LOAD_GLOBAL             11 (BigWorld)
+            157 LOAD_ATTR               12 (player)
+            160 CALL_FUNCTION            0
+            163 STORE_FAST               6 (player)
+
+336         166 LOAD_FAST                6 (player)
+            169 LOAD_CONST               0 (None)
+            172 COMPARE_OP               8 (is)
+            175 POP_JUMP_IF_FALSE      201
+
+337         178 LOAD_FAST                0 (cls)
+            181 LOAD_ATTR                2 (_CrosshairShotResults__sendDebugInfo)
+            184 LOAD_FAST                1 (gunMarker)
+            187 BUILD_LIST               0
+            190 CALL_FUNCTION            2
+            193 POP_TOP             
+
+338         194 LOAD_GLOBAL              3 (_SHOT_RESULT)
+            197 LOAD_ATTR                4 (UNDEFINED)
+            200 RETURN_VALUE        
+
+340     >>  201 LOAD_FAST                6 (player)
+            204 LOAD_ATTR               13 (getVehicleDescriptor)
+            207 CALL_FUNCTION            0
+            210 STORE_FAST               7 (vDesc)
+
+341         213 LOAD_FAST                7 (vDesc)
+            216 LOAD_ATTR               14 (gunInstallations)
+            219 LOAD_FAST                1 (gunMarker)
+            222 LOAD_ATTR               15 (gunInstallationIndex)
+            225 BINARY_SUBSCR       
+            226 STORE_FAST               8 (gunInstallationSlot)
+
+342         229 LOAD_FAST                8 (gunInstallationSlot)
+            232 LOAD_ATTR               16 (isMainInstallation)
+            235 CALL_FUNCTION            0
+            238 POP_JUMP_IF_FALSE      250
+            241 LOAD_FAST                7 (vDesc)
+            244 LOAD_ATTR               17 (shot)
+            247 JUMP_FORWARD            13 (to 263)
+        >>  250 LOAD_FAST                8 (gunInstallationSlot)
+            253 LOAD_ATTR               18 (gun)
+            256 LOAD_ATTR               19 (shots)
+            259 LOAD_CONST               1 (0)
+            262 BINARY_SUBSCR       
+        >>  263 STORE_FAST               9 (shot)
+
+344         266 LOAD_FAST                9 (shot)
+            269 LOAD_ATTR               20 (shell)
+            272 STORE_FAST              10 (shell)
+
+345         275 LOAD_FAST                9 (shot)
+            278 LOAD_ATTR               21 (piercingPower)
+            281 STORE_FAST              11 (ppDesc)
+
+346         284 LOAD_FAST                9 (shot)
+            287 LOAD_ATTR               22 (maxDistance)
+            290 STORE_FAST              12 (maxDist)
+
+348         293 LOAD_FAST                1 (gunMarker)
+            296 LOAD_ATTR               23 (position)
+            299 LOAD_FAST                6 (player)
+            302 LOAD_ATTR               24 (getOwnVehiclePosition)
+            305 CALL_FUNCTION            0
+            308 BINARY_SUBTRACT     
+            309 LOAD_ATTR               25 (length)
+            312 STORE_FAST              13 (dist)
+
+349         315 LOAD_GLOBAL             26 (computePiercingPowerAtDist)
+            318 LOAD_FAST               11 (ppDesc)
+            321 LOAD_FAST               13 (dist)
+            324 LOAD_FAST               12 (maxDist)
+            327 LOAD_FAST                3 (piercingMultiplier)
+            330 CALL_FUNCTION            4
+            333 STORE_FAST              14 (fullPPower)
+
+350         336 LOAD_FAST                0 (cls)
+            339 LOAD_ATTR               27 (_getAllCollisionDetails)
+            342 LOAD_FAST                1 (gunMarker)
+            345 LOAD_ATTR               23 (position)
+            348 LOAD_FAST                1 (gunMarker)
+            351 LOAD_ATTR               28 (direction)
+            354 LOAD_FAST                5 (entity)
+            357 CALL_FUNCTION            3
+            360 STORE_FAST              15 (collisionsDetails)
+
+352         363 LOAD_FAST               15 (collisionsDetails)
+            366 LOAD_CONST               0 (None)
+            369 COMPARE_OP               8 (is)
+            372 POP_JUMP_IF_FALSE      398
+
+353         375 LOAD_FAST                0 (cls)
+            378 LOAD_ATTR                2 (_CrosshairShotResults__sendDebugInfo)
+            381 LOAD_FAST                1 (gunMarker)
+            384 BUILD_LIST               0
+            387 CALL_FUNCTION            2
+            390 POP_TOP             
+
+354         391 LOAD_GLOBAL              3 (_SHOT_RESULT)
+            394 LOAD_ATTR                4 (UNDEFINED)
+            397 RETURN_VALUE        
+
+356     >>  398 LOAD_FAST                0 (cls)
+            401 LOAD_ATTR               29 (_computePiercingPowerRandomization)
+            404 LOAD_FAST               10 (shell)
+            407 CALL_FUNCTION            1
+            410 UNPACK_SEQUENCE          2
+            413 STORE_FAST              16 (minPP)
+            416 STORE_FAST              17 (maxPP)
+
+358         419 LOAD_FAST               10 (shell)
+            422 LOAD_ATTR               30 (kind)
+            425 LOAD_GLOBAL             31 (constants)
+            428 LOAD_ATTR               32 (SHELL_TYPES)
+            431 LOAD_ATTR               33 (HIGH_EXPLOSIVE)
+            434 COMPARE_OP               2 (==)
+            437 POP_JUMP_IF_FALSE      495
+
+359         440 LOAD_FAST               10 (shell)
+            443 LOAD_ATTR               34 (type)
+            446 LOAD_ATTR               35 (mechanics)
+            449 LOAD_GLOBAL             31 (constants)
+            452 LOAD_ATTR               36 (SHELL_MECHANICS_TYPE)
+            455 LOAD_ATTR               37 (MODERN)
+            458 COMPARE_OP               2 (==)
+            461 POP_JUMP_IF_FALSE      495
+
+360         464 LOAD_FAST                0 (cls)
+            467 LOAD_ATTR               38 (_CrosshairShotResults__shotResultModernHE)
+            470 LOAD_FAST                1 (gunMarker)
+            473 LOAD_FAST               15 (collisionsDetails)
+            476 LOAD_FAST               14 (fullPPower)
+            479 LOAD_FAST               10 (shell)
+            482 LOAD_FAST               16 (minPP)
+            485 LOAD_FAST               17 (maxPP)
+            488 LOAD_FAST                5 (entity)
+            491 CALL_FUNCTION            7
+            494 RETURN_VALUE        
+
+362     >>  495 LOAD_FAST                0 (cls)
+            498 LOAD_ATTR               39 (_CrosshairShotResults__shotResultDefault)
+            501 LOAD_FAST                1 (gunMarker)
+            504 LOAD_FAST               15 (collisionsDetails)
+            507 LOAD_FAST               14 (fullPPower)
+            510 LOAD_FAST               10 (shell)
+            513 LOAD_FAST               16 (minPP)
+            516 LOAD_FAST               17 (maxPP)
+            519 LOAD_FAST                5 (entity)
+            522 CALL_FUNCTION            7
+            525 RETURN_VALUE        
+('<module>._CrosshairShotResults.__shotResultModernHE', ('cls', 'gunMarker', 'collisionsDetails', 'fullPiercingPower', 'shell', 'minPP', 'maxPP', 'entity'), ('_SHOT_RESULT', 'NOT_PIERCED', 'set', 'round_py2_style', 'piercingPowerRandomization', '_CrosshairShotResults__isDestructibleComponent', 'compName', 'matInfo', 'None', 'kind', 'useHitAngle', 'hitAngleCos', '_computePenetrationArmor', 'vehicleDamageFactor', 'GREAT_PIERCED', 'LITTLE_PIERCED', '_CrosshairShotResults__collectDebugPiercingData', '_CrosshairShotResults__sendDebugInfo', 'type', 'shieldPenetration', 'MODERN_HE_PIERCING_POWER_REDUCTION_FACTOR_FOR_SHIELDS', 'MODERN_HE_DAMAGE_ABSORPTION_FACTOR', 'maxDamage', 'extra', '_CRIT_ONLY_SHOT_RESULT', 'collideOnceOnly', 'add'))
+376           0 LOAD_GLOBAL              0 (_SHOT_RESULT)
+              3 LOAD_ATTR                1 (NOT_PIERCED)
+              6 STORE_FAST               8 (result)
+
+377           9 LOAD_GLOBAL              2 (set)
+             12 CALL_FUNCTION            0
+             15 STORE_FAST               9 (ignoredMaterials)
+
+378          18 LOAD_FAST                3 (fullPiercingPower)
+             21 STORE_FAST              10 (piercingPower)
+
+379          24 LOAD_GLOBAL              3 (round_py2_style)
+             27 LOAD_FAST               10 (piercingPower)
+             30 CALL_FUNCTION            1
+             33 LOAD_FAST                4 (shell)
+             36 LOAD_ATTR                4 (piercingPowerRandomization)
+             39 BINARY_MULTIPLY     
+             40 STORE_FAST              11 (dispersion)
+
+380          43 LOAD_GLOBAL              3 (round_py2_style)
+             46 LOAD_GLOBAL              3 (round_py2_style)
+             49 LOAD_FAST               10 (piercingPower)
+             52 CALL_FUNCTION            1
+             55 LOAD_FAST               11 (dispersion)
+             58 BINARY_SUBTRACT     
+             59 CALL_FUNCTION            1
+             62 STORE_FAST              12 (minPiercingPower)
+
+381          65 LOAD_GLOBAL              3 (round_py2_style)
+             68 LOAD_GLOBAL              3 (round_py2_style)
+             71 LOAD_FAST               10 (piercingPower)
+             74 CALL_FUNCTION            1
+             77 LOAD_FAST               11 (dispersion)
+             80 BINARY_ADD          
+             81 CALL_FUNCTION            1
+             84 STORE_FAST              13 (maxPiercingPower)
+
+382          87 LOAD_CONST               1 (0)
+             90 STORE_FAST              14 (explosionDamageAbsorption)
+
+384          93 BUILD_LIST               0
+             96 STORE_FAST              15 (debugPiercingsList)
+
+386          99 SETUP_LOOP             640 (to 742)
+            102 LOAD_FAST                2 (collisionsDetails)
+            105 GET_ITER            
+        >>  106 FOR_ITER               632 (to 741)
+            109 STORE_FAST              16 (cDetails)
+
+387         112 LOAD_FAST                0 (cls)
+            115 LOAD_ATTR                5 (_CrosshairShotResults__isDestructibleComponent)
+            118 LOAD_FAST                7 (entity)
+            121 LOAD_FAST               16 (cDetails)
+            124 LOAD_ATTR                6 (compName)
+            127 CALL_FUNCTION            2
+            130 POP_JUMP_IF_TRUE       137
+
+388         133 LOAD_FAST                8 (result)
+            136 RETURN_VALUE        
+
+390     >>  137 LOAD_FAST               16 (cDetails)
+            140 LOAD_ATTR                7 (matInfo)
+            143 STORE_FAST              17 (matInfo)
+
+391         146 LOAD_FAST               17 (matInfo)
+            149 LOAD_CONST               0 (None)
+            152 COMPARE_OP               9 (is not)
+            155 POP_JUMP_IF_FALSE      106
+            158 LOAD_FAST               16 (cDetails)
+            161 LOAD_ATTR                6 (compName)
+            164 LOAD_FAST               17 (matInfo)
+            167 LOAD_ATTR                9 (kind)
+            170 BUILD_TUPLE              2
+            173 LOAD_FAST                9 (ignoredMaterials)
+            176 COMPARE_OP               7 (not in)
+            179 POP_JUMP_IF_FALSE      106
+
+392         182 LOAD_FAST               17 (matInfo)
+            185 LOAD_ATTR               10 (useHitAngle)
+            188 POP_JUMP_IF_FALSE      200
+            191 LOAD_FAST               16 (cDetails)
+            194 LOAD_ATTR               11 (hitAngleCos)
+            197 JUMP_FORWARD             3 (to 203)
+        >>  200 LOAD_CONST               2 (1.0)
+        >>  203 STORE_FAST              18 (hitAngleCos)
+
+394         206 LOAD_CONST               3 (1000.0)
+            209 STORE_FAST              19 (piercingPercent)
+
+395         212 LOAD_CONST               1 (0)
+            215 STORE_FAST              20 (penetrationArmor)
+
+396         218 LOAD_FAST                3 (fullPiercingPower)
+            221 LOAD_CONST               4 (0.0)
+            224 COMPARE_OP               4 (>)
+            227 POP_JUMP_IF_FALSE      276
+
+397         230 LOAD_FAST                0 (cls)
+            233 LOAD_ATTR               12 (_computePenetrationArmor)
+            236 LOAD_FAST                4 (shell)
+            239 LOAD_FAST               18 (hitAngleCos)
+            242 LOAD_FAST               17 (matInfo)
+            245 CALL_FUNCTION            3
+            248 STORE_FAST              20 (penetrationArmor)
+
+398         251 LOAD_CONST               5 (100.0)
+            254 LOAD_FAST               20 (penetrationArmor)
+            257 LOAD_FAST               10 (piercingPower)
+            260 BINARY_SUBTRACT     
+            261 LOAD_FAST                3 (fullPiercingPower)
+            264 BINARY_TRUE_DIVIDE  
+            265 LOAD_CONST               5 (100.0)
+            268 BINARY_MULTIPLY     
+            269 BINARY_ADD          
+            270 STORE_FAST              19 (piercingPercent)
+            273 JUMP_FORWARD             0 (to 276)
+
+400     >>  276 LOAD_FAST               17 (matInfo)
+            279 LOAD_ATTR               13 (vehicleDamageFactor)
+            282 POP_JUMP_IF_FALSE      435
+
+401         285 LOAD_FAST               10 (piercingPower)
+            288 LOAD_FAST               20 (penetrationArmor)
+            291 INPLACE_SUBTRACT    
+            292 STORE_FAST              10 (piercingPower)
+
+402         295 LOAD_GLOBAL              3 (round_py2_style)
+            298 LOAD_FAST               12 (minPiercingPower)
+            301 LOAD_FAST               20 (penetrationArmor)
+            304 BINARY_SUBTRACT     
+            305 CALL_FUNCTION            1
+            308 STORE_FAST              12 (minPiercingPower)
+
+403         311 LOAD_GLOBAL              3 (round_py2_style)
+            314 LOAD_FAST               13 (maxPiercingPower)
+            317 LOAD_FAST               20 (penetrationArmor)
+            320 BINARY_SUBTRACT     
+            321 CALL_FUNCTION            1
+            324 STORE_FAST              13 (maxPiercingPower)
+
+404         327 LOAD_FAST               19 (piercingPercent)
+            330 LOAD_FAST                5 (minPP)
+            333 COMPARE_OP               1 (<=)
+            336 POP_JUMP_IF_FALSE      363
+            339 LOAD_FAST               14 (explosionDamageAbsorption)
+            342 LOAD_CONST               1 (0)
+            345 COMPARE_OP               2 (==)
+            348 POP_JUMP_IF_FALSE      363
+
+405         351 LOAD_GLOBAL              0 (_SHOT_RESULT)
+            354 LOAD_ATTR               14 (GREAT_PIERCED)
+            357 STORE_FAST               8 (result)
+            360 JUMP_FORWARD             9 (to 372)
+
+407     >>  363 LOAD_GLOBAL              0 (_SHOT_RESULT)
+            366 LOAD_ATTR               15 (LITTLE_PIERCED)
+            369 STORE_FAST               8 (result)
+
+408     >>  372 LOAD_FAST                0 (cls)
+            375 LOAD_ATTR               16 (_CrosshairShotResults__collectDebugPiercingData)
+
+409         378 LOAD_FAST               15 (debugPiercingsList)
+            381 LOAD_FAST               20 (penetrationArmor)
+            384 LOAD_FAST               18 (hitAngleCos)
+            387 LOAD_FAST               12 (minPiercingPower)
+            390 LOAD_FAST               13 (maxPiercingPower)
+
+410         393 LOAD_FAST               19 (piercingPercent)
+            396 LOAD_FAST               17 (matInfo)
+            399 LOAD_FAST                8 (result)
+            402 CALL_FUNCTION            8
+            405 POP_TOP             
+
+412         406 LOAD_FAST                0 (cls)
+            409 LOAD_ATTR               17 (_CrosshairShotResults__sendDebugInfo)
+            412 LOAD_FAST                1 (gunMarker)
+            415 LOAD_FAST               15 (debugPiercingsList)
+            418 LOAD_FAST                5 (minPP)
+            421 LOAD_FAST                6 (maxPP)
+            424 LOAD_FAST                3 (fullPiercingPower)
+            427 CALL_FUNCTION            5
+            430 POP_TOP             
+
+413         431 LOAD_FAST                8 (result)
+            434 RETURN_VALUE        
+
+414     >>  435 LOAD_FAST                4 (shell)
+            438 LOAD_ATTR               18 (type)
+            441 LOAD_ATTR               19 (shieldPenetration)
+            444 POP_JUMP_IF_FALSE      516
+
+415         447 LOAD_FAST               20 (penetrationArmor)
+            450 LOAD_GLOBAL             20 (MODERN_HE_PIERCING_POWER_REDUCTION_FACTOR_FOR_SHIELDS)
+            453 BINARY_MULTIPLY     
+            454 STORE_FAST              21 (shieldPenetration)
+
+416         457 LOAD_FAST               10 (piercingPower)
+            460 LOAD_FAST               21 (shieldPenetration)
+            463 INPLACE_SUBTRACT    
+            464 STORE_FAST              10 (piercingPower)
+
+417         467 LOAD_GLOBAL              3 (round_py2_style)
+            470 LOAD_FAST               12 (minPiercingPower)
+            473 LOAD_FAST               21 (shieldPenetration)
+            476 BINARY_SUBTRACT     
+            477 CALL_FUNCTION            1
+            480 STORE_FAST              12 (minPiercingPower)
+
+418         483 LOAD_GLOBAL              3 (round_py2_style)
+            486 LOAD_FAST               13 (maxPiercingPower)
+            489 LOAD_FAST               21 (shieldPenetration)
+            492 BINARY_SUBTRACT     
+            493 CALL_FUNCTION            1
+            496 STORE_FAST              13 (maxPiercingPower)
+
+419         499 LOAD_FAST               14 (explosionDamageAbsorption)
+            502 LOAD_FAST               20 (penetrationArmor)
+            505 LOAD_GLOBAL             21 (MODERN_HE_DAMAGE_ABSORPTION_FACTOR)
+            508 BINARY_MULTIPLY     
+            509 INPLACE_ADD         
+            510 STORE_FAST              14 (explosionDamageAbsorption)
+            513 JUMP_FORWARD             0 (to 516)
+
+422     >>  516 LOAD_FAST               19 (piercingPercent)
+            519 LOAD_FAST                6 (maxPP)
+            522 COMPARE_OP               4 (>)
+            525 POP_JUMP_IF_TRUE       559
+
+423         528 LOAD_FAST                4 (shell)
+            531 LOAD_ATTR               18 (type)
+            534 LOAD_ATTR               19 (shieldPenetration)
+            537 UNARY_NOT           
+            538 POP_JUMP_IF_TRUE       559
+
+424         541 LOAD_FAST               14 (explosionDamageAbsorption)
+            544 LOAD_FAST                4 (shell)
+            547 LOAD_ATTR               18 (type)
+            550 LOAD_ATTR               22 (maxDamage)
+            553 COMPARE_OP               5 (>=)
+            556 POP_JUMP_IF_FALSE      628
+
+426     >>  559 LOAD_FAST                0 (cls)
+            562 LOAD_ATTR               16 (_CrosshairShotResults__collectDebugPiercingData)
+
+427         565 LOAD_FAST               15 (debugPiercingsList)
+            568 LOAD_FAST               20 (penetrationArmor)
+            571 LOAD_FAST               18 (hitAngleCos)
+            574 LOAD_FAST               12 (minPiercingPower)
+            577 LOAD_FAST               13 (maxPiercingPower)
+
+428         580 LOAD_FAST               19 (piercingPercent)
+            583 LOAD_FAST               17 (matInfo)
+            586 LOAD_GLOBAL              0 (_SHOT_RESULT)
+            589 LOAD_ATTR                1 (NOT_PIERCED)
+            592 CALL_FUNCTION            8
+            595 POP_TOP             
+
+430         596 LOAD_FAST                0 (cls)
+            599 LOAD_ATTR               17 (_CrosshairShotResults__sendDebugInfo)
+            602 LOAD_FAST                1 (gunMarker)
+            605 LOAD_FAST               15 (debugPiercingsList)
+            608 LOAD_FAST                5 (minPP)
+            611 LOAD_FAST                6 (maxPP)
+            614 LOAD_FAST                3 (fullPiercingPower)
+            617 CALL_FUNCTION            5
+            620 POP_TOP             
+
+431         621 LOAD_GLOBAL              0 (_SHOT_RESULT)
+            624 LOAD_ATTR                1 (NOT_PIERCED)
+            627 RETURN_VALUE        
+
+432     >>  628 LOAD_FAST               17 (matInfo)
+            631 LOAD_ATTR               23 (extra)
+            634 POP_JUMP_IF_FALSE      698
+            637 LOAD_FAST               19 (piercingPercent)
+            640 LOAD_FAST                6 (maxPP)
+            643 COMPARE_OP               1 (<=)
+            646 POP_JUMP_IF_FALSE      698
+
+433         649 LOAD_FAST                0 (cls)
+            652 LOAD_ATTR               16 (_CrosshairShotResults__collectDebugPiercingData)
+
+434         655 LOAD_FAST               15 (debugPiercingsList)
+            658 LOAD_FAST               20 (penetrationArmor)
+            661 LOAD_FAST               18 (hitAngleCos)
+            664 LOAD_FAST               12 (minPiercingPower)
+            667 LOAD_FAST               13 (maxPiercingPower)
+
+435         670 LOAD_FAST               19 (piercingPercent)
+            673 LOAD_FAST               17 (matInfo)
+            676 LOAD_FAST                0 (cls)
+            679 LOAD_ATTR               24 (_CRIT_ONLY_SHOT_RESULT)
+            682 CALL_FUNCTION            8
+            685 POP_TOP             
+
+437         686 LOAD_FAST                0 (cls)
+            689 LOAD_ATTR               24 (_CRIT_ONLY_SHOT_RESULT)
+            692 STORE_FAST               8 (result)
+            695 JUMP_FORWARD             0 (to 698)
+
+439     >>  698 LOAD_FAST               17 (matInfo)
+            701 LOAD_ATTR               25 (collideOnceOnly)
+            704 POP_JUMP_IF_FALSE      738
+
+440         707 LOAD_FAST                9 (ignoredMaterials)
+            710 LOAD_ATTR               26 (add)
+            713 LOAD_FAST               16 (cDetails)
+            716 LOAD_ATTR                6 (compName)
+            719 LOAD_FAST               17 (matInfo)
+            722 LOAD_ATTR                9 (kind)
+            725 BUILD_TUPLE              2
+            728 CALL_FUNCTION            1
+            731 POP_TOP             
+            732 JUMP_ABSOLUTE          738
+            735 JUMP_ABSOLUTE          106
+        >>  738 JUMP_ABSOLUTE          106
+        >>  741 POP_BLOCK           
+
+442     >>  742 LOAD_FAST                0 (cls)
+            745 LOAD_ATTR               17 (_CrosshairShotResults__sendDebugInfo)
+            748 LOAD_FAST                1 (gunMarker)
+            751 LOAD_FAST               15 (debugPiercingsList)
+            754 LOAD_FAST                5 (minPP)
+            757 LOAD_FAST                6 (maxPP)
+            760 LOAD_FAST                3 (fullPiercingPower)
+            763 CALL_FUNCTION            5
+            766 POP_TOP             
+
+443         767 LOAD_FAST                8 (result)
+            770 RETURN_VALUE        
+('<module>._CrosshairShotResults.__shotResultDefault', ('cls', 'gunMarker', 'collisionsDetails', 'fullPiercingPower', 'shell', 'minPP', 'maxPP', 'entity'), ('_SHOT_RESULT', 'NOT_PIERCED', 'False', 'None', 'round_py2_style', 'piercingPowerRandomization', 'set', '_CrosshairShotResults__isDestructibleComponent', 'compName', 'dist', '_SHELL_EXTRA_DATA', 'kind', 'hasPenetrationLoss', 'type', 'piercingPowerLossFactorByDistance', 'matInfo', '_CRIT_ONLY_SHOT_RESULT', 'armor', 'UNDEFINED', '_logger', 'error', 'useHitAngle', 'hitAngleCos', '_shouldRicochet', '_CrosshairShotResults__collectDebugPiercingData', '_computePenetrationArmor', 'vehicleDamageFactor', 'LITTLE_PIERCED', 'GREAT_PIERCED', 'extra', 'collideOnceOnly', 'add', 'True', '_CrosshairShotResults__sendDebugInfo'))
+450           0 LOAD_GLOBAL              0 (_SHOT_RESULT)
+              3 LOAD_ATTR                1 (NOT_PIERCED)
+              6 STORE_FAST               8 (result)
+
+451           9 LOAD_GLOBAL              2 (False)
+             12 STORE_FAST               9 (isJet)
+
+452          15 LOAD_CONST               0 (None)
+             18 STORE_FAST              10 (jetStartDist)
+
+453          21 LOAD_FAST                3 (fullPiercingPower)
+             24 STORE_FAST              11 (piercingPower)
+
+454          27 LOAD_GLOBAL              4 (round_py2_style)
+             30 LOAD_FAST               11 (piercingPower)
+             33 CALL_FUNCTION            1
+             36 LOAD_FAST                4 (shell)
+             39 LOAD_ATTR                5 (piercingPowerRandomization)
+             42 BINARY_MULTIPLY     
+             43 STORE_FAST              12 (dispersion)
+
+455          46 LOAD_GLOBAL              4 (round_py2_style)
+             49 LOAD_GLOBAL              4 (round_py2_style)
+             52 LOAD_FAST               11 (piercingPower)
+             55 CALL_FUNCTION            1
+             58 LOAD_FAST               12 (dispersion)
+             61 BINARY_SUBTRACT     
+             62 CALL_FUNCTION            1
+             65 STORE_FAST              13 (minPiercingPower)
+
+456          68 LOAD_GLOBAL              4 (round_py2_style)
+             71 LOAD_GLOBAL              4 (round_py2_style)
+             74 LOAD_FAST               11 (piercingPower)
+             77 CALL_FUNCTION            1
+             80 LOAD_FAST               12 (dispersion)
+             83 BINARY_ADD          
+             84 CALL_FUNCTION            1
+             87 STORE_FAST              14 (maxPiercingPower)
+
+457          90 LOAD_GLOBAL              6 (set)
+             93 CALL_FUNCTION            0
+             96 STORE_FAST              15 (ignoredMaterials)
+
+459          99 BUILD_LIST               0
+            102 STORE_FAST              16 (debugPiercingsList)
+
+461         105 SETUP_LOOP             880 (to 988)
+            108 LOAD_FAST                2 (collisionsDetails)
+            111 GET_ITER            
+        >>  112 FOR_ITER               872 (to 987)
+            115 STORE_FAST              17 (cDetails)
+
+462         118 LOAD_FAST                0 (cls)
+            121 LOAD_ATTR                7 (_CrosshairShotResults__isDestructibleComponent)
+            124 LOAD_FAST                7 (entity)
+            127 LOAD_FAST               17 (cDetails)
+            130 LOAD_ATTR                8 (compName)
+            133 CALL_FUNCTION            2
+            136 POP_JUMP_IF_TRUE       143
+
+463         139 BREAK_LOOP          
+            140 JUMP_FORWARD             0 (to 143)
+
+465     >>  143 LOAD_FAST                9 (isJet)
+            146 POP_JUMP_IF_FALSE      276
+
+466         149 LOAD_FAST               17 (cDetails)
+            152 LOAD_ATTR                9 (dist)
+            155 LOAD_FAST               10 (jetStartDist)
+            158 BINARY_SUBTRACT     
+            159 STORE_FAST              18 (jetDist)
+
+467         162 LOAD_FAST               18 (jetDist)
+            165 LOAD_CONST               1 (0.0)
+            168 COMPARE_OP               4 (>)
+            171 POP_JUMP_IF_FALSE      276
+
+468         174 LOAD_FAST                0 (cls)
+            177 LOAD_ATTR               10 (_SHELL_EXTRA_DATA)
+            180 LOAD_FAST                4 (shell)
+            183 LOAD_ATTR               11 (kind)
+            186 BINARY_SUBSCR       
+            187 LOAD_ATTR               12 (hasPenetrationLoss)
+            190 POP_JUMP_IF_FALSE      208
+
+469         193 LOAD_FAST                4 (shell)
+            196 LOAD_ATTR               13 (type)
+            199 LOAD_ATTR               14 (piercingPowerLossFactorByDistance)
+            202 STORE_FAST              19 (jetLossPPByDist)
+            205 JUMP_FORWARD             6 (to 214)
+
+471     >>  208 LOAD_CONST               1 (0.0)
+            211 STORE_FAST              19 (jetLossPPByDist)
+
+472     >>  214 LOAD_CONST               2 (1.0)
+            217 LOAD_FAST               18 (jetDist)
+            220 LOAD_FAST               19 (jetLossPPByDist)
+            223 BINARY_MULTIPLY     
+            224 BINARY_SUBTRACT     
+            225 STORE_FAST              20 (lossByDist)
+
+473         228 LOAD_FAST               11 (piercingPower)
+            231 LOAD_FAST               20 (lossByDist)
+            234 INPLACE_MULTIPLY    
+            235 STORE_FAST              11 (piercingPower)
+
+474         238 LOAD_GLOBAL              4 (round_py2_style)
+            241 LOAD_FAST               13 (minPiercingPower)
+            244 LOAD_FAST               20 (lossByDist)
+            247 BINARY_MULTIPLY     
+            248 CALL_FUNCTION            1
+            251 STORE_FAST              13 (minPiercingPower)
+
+475         254 LOAD_GLOBAL              4 (round_py2_style)
+            257 LOAD_FAST               14 (maxPiercingPower)
+            260 LOAD_FAST               20 (lossByDist)
+            263 BINARY_MULTIPLY     
+            264 CALL_FUNCTION            1
+            267 STORE_FAST              14 (maxPiercingPower)
+            270 JUMP_ABSOLUTE          276
+            273 JUMP_FORWARD             0 (to 276)
+
+477     >>  276 LOAD_FAST               17 (cDetails)
+            279 LOAD_ATTR               15 (matInfo)
+            282 LOAD_CONST               0 (None)
+            285 COMPARE_OP               8 (is)
+            288 POP_JUMP_IF_FALSE      303
+
+478         291 LOAD_FAST                0 (cls)
+            294 LOAD_ATTR               16 (_CRIT_ONLY_SHOT_RESULT)
+            297 STORE_FAST               8 (result)
+            300 JUMP_FORWARD           584 (to 887)
+
+480     >>  303 LOAD_FAST               17 (cDetails)
+            306 LOAD_ATTR               15 (matInfo)
+            309 STORE_FAST              21 (matInfo)
+
+481         312 LOAD_FAST               17 (cDetails)
+            315 LOAD_ATTR                8 (compName)
+            318 LOAD_FAST               21 (matInfo)
+            321 LOAD_ATTR               11 (kind)
+            324 BUILD_TUPLE              2
+            327 LOAD_FAST               15 (ignoredMaterials)
+            330 COMPARE_OP               6 (in)
+            333 POP_JUMP_IF_FALSE      342
+
+482         336 JUMP_ABSOLUTE          112
+            339 JUMP_FORWARD             0 (to 342)
+
+484     >>  342 LOAD_FAST               21 (matInfo)
+            345 LOAD_ATTR               17 (armor)
+            348 LOAD_CONST               0 (None)
+            351 COMPARE_OP               8 (is)
+            354 POP_JUMP_IF_FALSE      391
+
+485         357 LOAD_GLOBAL              0 (_SHOT_RESULT)
+            360 LOAD_ATTR               18 (UNDEFINED)
+            363 STORE_FAST               8 (result)
+
+486         366 LOAD_GLOBAL             19 (_logger)
+            369 LOAD_ATTR               20 (error)
+            372 LOAD_CONST               3 ('Unconfigured/default material/armor for material kind %d')
+            375 LOAD_FAST               21 (matInfo)
+            378 LOAD_ATTR               11 (kind)
+            381 CALL_FUNCTION            2
+            384 POP_TOP             
+
+487         385 JUMP_ABSOLUTE          112
+            388 JUMP_FORWARD             0 (to 391)
+
+490     >>  391 LOAD_FAST               21 (matInfo)
+            394 LOAD_ATTR               21 (useHitAngle)
+            397 POP_JUMP_IF_FALSE      409
+            400 LOAD_FAST               17 (cDetails)
+            403 LOAD_ATTR               22 (hitAngleCos)
+            406 JUMP_FORWARD             3 (to 412)
+        >>  409 LOAD_CONST               2 (1.0)
+        >>  412 STORE_FAST              22 (hitAngleCos)
+
+491         415 LOAD_CONST               4 (1000.0)
+            418 STORE_FAST              23 (piercingPercent)
+
+493         421 LOAD_FAST                9 (isJet)
+            424 UNARY_NOT           
+            425 POP_JUMP_IF_FALSE      490
+            428 LOAD_FAST                0 (cls)
+            431 LOAD_ATTR               23 (_shouldRicochet)
+            434 LOAD_FAST                4 (shell)
+            437 LOAD_FAST               22 (hitAngleCos)
+            440 LOAD_FAST               21 (matInfo)
+            443 CALL_FUNCTION            3
+            446 POP_JUMP_IF_FALSE      490
+
+494         449 LOAD_FAST                0 (cls)
+            452 LOAD_ATTR               24 (_CrosshairShotResults__collectDebugPiercingData)
+
+495         455 LOAD_FAST               16 (debugPiercingsList)
+            458 LOAD_CONST               0 (None)
+            461 LOAD_FAST               22 (hitAngleCos)
+            464 LOAD_FAST               13 (minPiercingPower)
+            467 LOAD_FAST               14 (maxPiercingPower)
+
+496         470 LOAD_FAST               23 (piercingPercent)
+            473 LOAD_FAST               21 (matInfo)
+            476 LOAD_GLOBAL              0 (_SHOT_RESULT)
+            479 LOAD_ATTR                1 (NOT_PIERCED)
+            482 CALL_FUNCTION            8
+            485 POP_TOP             
+
+498         486 BREAK_LOOP          
+            487 JUMP_FORWARD             0 (to 490)
+
+500     >>  490 LOAD_CONST               5 (0)
+            493 STORE_FAST              24 (penetrationArmor)
+
+501         496 LOAD_FAST               11 (piercingPower)
+            499 LOAD_CONST               1 (0.0)
+            502 COMPARE_OP               4 (>)
+            505 POP_JUMP_IF_FALSE      596
+
+502         508 LOAD_FAST                0 (cls)
+            511 LOAD_ATTR               25 (_computePenetrationArmor)
+            514 LOAD_FAST                4 (shell)
+            517 LOAD_FAST               22 (hitAngleCos)
+            520 LOAD_FAST               21 (matInfo)
+            523 CALL_FUNCTION            3
+            526 STORE_FAST              24 (penetrationArmor)
+
+503         529 LOAD_CONST               6 (100.0)
+            532 LOAD_FAST               24 (penetrationArmor)
+            535 LOAD_FAST               11 (piercingPower)
+            538 BINARY_SUBTRACT     
+            539 LOAD_FAST                3 (fullPiercingPower)
+            542 BINARY_TRUE_DIVIDE  
+            543 LOAD_CONST               6 (100.0)
+            546 BINARY_MULTIPLY     
+            547 BINARY_ADD          
+            548 STORE_FAST              23 (piercingPercent)
+
+504         551 LOAD_FAST               11 (piercingPower)
+            554 LOAD_FAST               24 (penetrationArmor)
+            557 INPLACE_SUBTRACT    
+            558 STORE_FAST              11 (piercingPower)
+
+505         561 LOAD_GLOBAL              4 (round_py2_style)
+            564 LOAD_FAST               13 (minPiercingPower)
+            567 LOAD_FAST               24 (penetrationArmor)
+            570 BINARY_SUBTRACT     
+            571 CALL_FUNCTION            1
+            574 STORE_FAST              13 (minPiercingPower)
+
+506         577 LOAD_GLOBAL              4 (round_py2_style)
+            580 LOAD_FAST               14 (maxPiercingPower)
+            583 LOAD_FAST               24 (penetrationArmor)
+            586 BINARY_SUBTRACT     
+            587 CALL_FUNCTION            1
+            590 STORE_FAST              14 (maxPiercingPower)
+            593 JUMP_FORWARD             0 (to 596)
+
+508     >>  596 LOAD_FAST               21 (matInfo)
+            599 LOAD_ATTR               26 (vehicleDamageFactor)
+            602 POP_JUMP_IF_FALSE      707
+
+509         605 LOAD_FAST                5 (minPP)
+            608 LOAD_FAST               23 (piercingPercent)
+            611 DUP_TOP             
+            612 ROT_THREE           
+            613 COMPARE_OP               0 (<)
+            616 JUMP_IF_FALSE_OR_POP   628
+            619 LOAD_FAST                6 (maxPP)
+            622 COMPARE_OP               0 (<)
+            625 JUMP_FORWARD             2 (to 630)
+        >>  628 ROT_TWO             
+            629 POP_TOP             
+        >>  630 POP_JUMP_IF_FALSE      645
+
+510         633 LOAD_GLOBAL              0 (_SHOT_RESULT)
+            636 LOAD_ATTR               27 (LITTLE_PIERCED)
+            639 STORE_FAST               8 (result)
+            642 JUMP_FORWARD            24 (to 669)
+
+511     >>  645 LOAD_FAST               23 (piercingPercent)
+            648 LOAD_FAST                5 (minPP)
+            651 COMPARE_OP               1 (<=)
+            654 POP_JUMP_IF_FALSE      669
+
+512         657 LOAD_GLOBAL              0 (_SHOT_RESULT)
+            660 LOAD_ATTR               28 (GREAT_PIERCED)
+            663 STORE_FAST               8 (result)
+            666 JUMP_FORWARD             0 (to 669)
+
+513     >>  669 LOAD_FAST                0 (cls)
+            672 LOAD_ATTR               24 (_CrosshairShotResults__collectDebugPiercingData)
+
+514         675 LOAD_FAST               16 (debugPiercingsList)
+            678 LOAD_FAST               24 (penetrationArmor)
+            681 LOAD_FAST               22 (hitAngleCos)
+            684 LOAD_FAST               13 (minPiercingPower)
+
+515         687 LOAD_FAST               14 (maxPiercingPower)
+            690 LOAD_FAST               23 (piercingPercent)
+            693 LOAD_FAST               21 (matInfo)
+            696 LOAD_FAST                8 (result)
+            699 CALL_FUNCTION            8
+            702 POP_TOP             
+
+517         703 BREAK_LOOP          
+            704 JUMP_FORWARD             0 (to 707)
+
+519     >>  707 LOAD_GLOBAL              0 (_SHOT_RESULT)
+            710 LOAD_ATTR                1 (NOT_PIERCED)
+            713 STORE_FAST              25 (debugResut)
+
+520         716 LOAD_FAST                5 (minPP)
+            719 LOAD_FAST               23 (piercingPercent)
+            722 DUP_TOP             
+            723 ROT_THREE           
+            724 COMPARE_OP               0 (<)
+            727 JUMP_IF_FALSE_OR_POP   739
+            730 LOAD_FAST                6 (maxPP)
+            733 COMPARE_OP               0 (<)
+            736 JUMP_FORWARD             2 (to 741)
+        >>  739 ROT_TWO             
+            740 POP_TOP             
+        >>  741 POP_JUMP_IF_FALSE      756
+
+521         744 LOAD_GLOBAL              0 (_SHOT_RESULT)
+            747 LOAD_ATTR               27 (LITTLE_PIERCED)
+            750 STORE_FAST              25 (debugResut)
+            753 JUMP_FORWARD            24 (to 780)
+
+522     >>  756 LOAD_FAST               23 (piercingPercent)
+            759 LOAD_FAST                5 (minPP)
+            762 COMPARE_OP               1 (<=)
+            765 POP_JUMP_IF_FALSE      780
+
+523         768 LOAD_GLOBAL              0 (_SHOT_RESULT)
+            771 LOAD_ATTR               28 (GREAT_PIERCED)
+            774 STORE_FAST              25 (debugResut)
+            777 JUMP_FORWARD             0 (to 780)
+
+524     >>  780 LOAD_FAST               21 (matInfo)
+            783 LOAD_ATTR               29 (extra)
+            786 POP_JUMP_IF_FALSE      816
+
+525         789 LOAD_FAST               23 (piercingPercent)
+            792 LOAD_FAST                6 (maxPP)
+            795 COMPARE_OP               1 (<=)
+            798 POP_JUMP_IF_FALSE      816
+
+526         801 LOAD_FAST                0 (cls)
+            804 LOAD_ATTR               16 (_CRIT_ONLY_SHOT_RESULT)
+            807 STORE_FAST               8 (result)
+            810 JUMP_ABSOLUTE          816
+            813 JUMP_FORWARD             0 (to 816)
+
+528     >>  816 LOAD_FAST                0 (cls)
+            819 LOAD_ATTR               24 (_CrosshairShotResults__collectDebugPiercingData)
+
+529         822 LOAD_FAST               16 (debugPiercingsList)
+            825 LOAD_FAST               24 (penetrationArmor)
+            828 LOAD_FAST               22 (hitAngleCos)
+            831 LOAD_FAST               13 (minPiercingPower)
+            834 LOAD_FAST               14 (maxPiercingPower)
+
+530         837 LOAD_FAST               23 (piercingPercent)
+            840 LOAD_FAST               21 (matInfo)
+            843 LOAD_FAST               25 (debugResut)
+            846 CALL_FUNCTION            8
+            849 POP_TOP             
+
+533         850 LOAD_FAST               21 (matInfo)
+            853 LOAD_ATTR               30 (collideOnceOnly)
+            856 POP_JUMP_IF_FALSE      887
+
+534         859 LOAD_FAST               15 (ignoredMaterials)
+            862 LOAD_ATTR               31 (add)
+            865 LOAD_FAST               17 (cDetails)
+            868 LOAD_ATTR                8 (compName)
+            871 LOAD_FAST               21 (matInfo)
+            874 LOAD_ATTR               11 (kind)
+            877 BUILD_TUPLE              2
+            880 CALL_FUNCTION            1
+            883 POP_TOP             
+            884 JUMP_FORWARD             0 (to 887)
+
+536     >>  887 LOAD_FAST               11 (piercingPower)
+            890 LOAD_CONST               1 (0.0)
+            893 COMPARE_OP               1 (<=)
+            896 POP_JUMP_IF_FALSE      903
+
+537         899 BREAK_LOOP          
+            900 JUMP_FORWARD             0 (to 903)
+
+539     >>  903 LOAD_FAST                0 (cls)
+            906 LOAD_ATTR               10 (_SHELL_EXTRA_DATA)
+            909 LOAD_FAST                4 (shell)
+            912 LOAD_ATTR               11 (kind)
+            915 BINARY_SUBSCR       
+            916 LOAD_ATTR               12 (hasPenetrationLoss)
+            919 POP_JUMP_IF_FALSE      112
+
+540         922 LOAD_GLOBAL             32 (True)
+            925 STORE_FAST               9 (isJet)
+
+541         928 LOAD_FAST               17 (cDetails)
+            931 LOAD_ATTR               15 (matInfo)
+            934 STORE_FAST              26 (mInfo)
+
+542         937 LOAD_FAST               26 (mInfo)
+            940 LOAD_CONST               0 (None)
+            943 COMPARE_OP               9 (is not)
+            946 POP_JUMP_IF_FALSE      958
+            949 LOAD_FAST               26 (mInfo)
+            952 LOAD_ATTR               17 (armor)
+            955 JUMP_FORWARD             3 (to 961)
+        >>  958 LOAD_CONST               1 (0.0)
+        >>  961 STORE_FAST              27 (armor)
+
+543         964 LOAD_FAST               17 (cDetails)
+            967 LOAD_ATTR                9 (dist)
+            970 LOAD_FAST               27 (armor)
+            973 LOAD_CONST               7 (0.001)
+            976 BINARY_MULTIPLY     
+            977 BINARY_ADD          
+            978 STORE_FAST              10 (jetStartDist)
+            981 JUMP_ABSOLUTE          112
+            984 JUMP_ABSOLUTE          112
+        >>  987 POP_BLOCK           
+
+545     >>  988 LOAD_FAST                0 (cls)
+            991 LOAD_ATTR               33 (_CrosshairShotResults__sendDebugInfo)
+            994 LOAD_FAST                1 (gunMarker)
+            997 LOAD_FAST               16 (debugPiercingsList)
+           1000 LOAD_FAST                5 (minPP)
+           1003 LOAD_FAST                6 (maxPP)
+           1006 LOAD_FAST                3 (fullPiercingPower)
+           1009 CALL_FUNCTION            5
+           1012 POP_TOP             
+
+546        1013 LOAD_FAST                8 (result)
+           1016 RETURN_VALUE        
+('<module>._CrosshairShotResults.__isDestructibleComponent', ('cls', 'entity', 'componentID'), ('isinstance', 'DestructibleEntity', 'isDestructibleComponent', 'True'))
+550           0 LOAD_GLOBAL              0 (isinstance)
+              3 LOAD_FAST                1 (entity)
+              6 LOAD_GLOBAL              1 (DestructibleEntity)
+              9 CALL_FUNCTION            2
+             12 POP_JUMP_IF_FALSE       28
+
+551          15 LOAD_FAST                1 (entity)
+             18 LOAD_ATTR                2 (isDestructibleComponent)
+             21 LOAD_FAST                2 (componentID)
+             24 CALL_FUNCTION            1
+             27 RETURN_VALUE        
+
+552     >>   28 LOAD_GLOBAL              3 (True)
+             31 RETURN_VALUE        
+('FILE', 'C:\\pademinune-AP_Calculator-2.2.0\\pademinune-AP_Calculator-Windows\\res\\development\\client_inspection\\tankStructure.pyc')
+('<module>.TankPartIndexes', (), ('__name__', '__module__', 'CHASSIS', 'HULL', 'TURRET', 'GUN', 'ALL', 'staticmethod', 'getName'))
+131           0 LOAD_NAME                0 (__name__)
+              3 STORE_NAME               1 (__module__)
+
+132           6 LOAD_CONST               0 (0)
+              9 STORE_NAME               2 (CHASSIS)
+
+133          12 LOAD_CONST               1 (1)
+             15 STORE_NAME               3 (HULL)
+
+134          18 LOAD_CONST               2 (2)
+             21 STORE_NAME               4 (TURRET)
+
+135          24 LOAD_CONST               3 (3)
+             27 STORE_NAME               5 (GUN)
+
+137          30 LOAD_NAME                2 (CHASSIS)
+             33 LOAD_NAME                3 (HULL)
+             36 LOAD_NAME                4 (TURRET)
+             39 LOAD_NAME                5 (GUN)
+             42 BUILD_TUPLE              4
+             45 STORE_NAME               6 (ALL)
+
+139          48 LOAD_NAME                7 (staticmethod)
+             51 LOAD_CONST               4 (<code object getName at 00000000035732B0, file "scripts/client/vehicle_systems/tankStructure.py", line 139>)
+             54 MAKE_FUNCTION            0
+             57 CALL_FUNCTION            1
+             60 STORE_NAME               8 (getName)
+             63 LOAD_LOCALS         
+             64 RETURN_VALUE        
+('FILE', 'C:\\pademinune-AP_Calculator-2.2.0\\pademinune-AP_Calculator-Windows\\res\\development\\client_inspection\\component_constants.pyc')
