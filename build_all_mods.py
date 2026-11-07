@@ -9,7 +9,7 @@ GAME=Path(r'C:\Program Files (x86)\Steam\steamapps\common\World of Tanks\asia')
 
 def sha(data):return hashlib.sha256(data).hexdigest()
 
-def build():
+def build(include_gameface=False):
     info=ET.parse(GAME/'version.xml').getroot()
     version,number=re.fullmatch(r'\s*v\.(\S+)\s+#(\d+)\s*',info.findtext('version')).groups()
     label=info.findtext('meta/realm').strip()+' '+version+' #'+number
@@ -26,6 +26,8 @@ def build():
     assert len(installed)==1, 'Expected one installed and checked Gameface dependency'
     dependency=OUTPUT/installed[0].name
     assert dependency.read_bytes()==installed[0].read_bytes(), 'Dependency differs from checked installed copy'
+    if include_gameface:
+        inputs.append(dependency)
     payload={}; owners={}; aliases={}; credits=[]; sources=[];duplicates=[]
     for source in inputs:
         with zipfile.ZipFile(source) as z:
@@ -45,7 +47,7 @@ def build():
                 aliases[key]=name;payload[name]=data;owners[name]=source.name
         sources.append(dict(file=source.name,sha256=sha(source.read_bytes())))
     root=ET.Element('root')
-    for key,value in [('id','phuochung94.mod_all'),('version',version+'.'+number),('name','phuochung94 — all mods'),('author','phuochung94'),('description','Combined personal mod collection for '+label+'.\nRequires the separate OpenWG Gameface .wotmod; it is not embedded.\n\n'+'\n\n'.join(credits))]:ET.SubElement(root,key).text=value
+    for key,value in [('id','phuochung94.mod_all'),('version',version+'.'+number),('name','phuochung94 — all mods'),('author','phuochung94'),('description','Combined personal mod collection for '+label+'.\n'+('Includes OpenWG Gameface runtime.' if include_gameface else 'Requires the separate OpenWG Gameface .wotmod; it is not embedded.')+'\n\n'+'\n\n'.join(credits))]:ET.SubElement(root,key).text=value
     ET.indent(root);meta=ET.tostring(root,encoding='utf-8',xml_declaration=True)
     target=OUTPUT/('mods_'+label+'.wotmod');temporary=target.with_suffix('.building')
     with zipfile.ZipFile(temporary,'w',zipfile.ZIP_STORED) as z:
@@ -59,15 +61,23 @@ def build():
         for name,data in payload.items():assert z.read(name)==data
         with zipfile.ZipFile(dependency) as dep_archive:
             dependency_paths={n.casefold() for n in dep_archive.namelist() if n.startswith('res/') and not n.endswith('/')}
-        assert not (dependency_paths & {n.casefold() for n in z.namelist()}), 'Shared Gameface runtime must remain external'
+        packaged_paths={n.casefold() for n in z.namelist()}
+        if include_gameface:
+            assert dependency_paths <= packaged_paths, 'Missing bundled Gameface runtime'
+        else:
+            assert not (dependency_paths & packaged_paths), 'Shared Gameface runtime must remain external'
         assert not any(n.endswith('.wotmod') for n in z.namelist())
     if target.exists():
         old=BASE/'rollback-backups'/'combined';old.mkdir(parents=True,exist_ok=True)
         shutil.copy2(target,old/(target.stem+'-'+sha(target.read_bytes())[:16]+'.wotmod'))
     temporary.replace(target)
-    report=dict(game=label,path=str(target),sha256=sha(target.read_bytes()),bytes=target.stat().st_size,mod_projects=len(projects),dependency=dependency.name,dependency_embedded=False,dependency_sha256=sha(dependency.read_bytes()),sources=sources,runtime_entries=len(payload),identical_duplicates=duplicates,conflicting_files=0,crc_and_source_payload_verified=True,compression='ZIP_STORED',in_game_verified=False,limitations='File collision and integrity checks do not prove runtime hook interoperability. Install this combined package plus exactly one separate Gameface package; omit constituent standalone mods to avoid duplicate initialization.')
+    report=dict(game=label,path=str(target),sha256=sha(target.read_bytes()),bytes=target.stat().st_size,mod_projects=len(projects),dependency=dependency.name,dependency_embedded=include_gameface,dependency_sha256=sha(dependency.read_bytes()),sources=sources,runtime_entries=len(payload),identical_duplicates=duplicates,conflicting_files=0,crc_and_source_payload_verified=True,compression='ZIP_STORED',in_game_verified=False,limitations='File collision and integrity checks do not prove runtime hook interoperability. '+('Install only this combined package; omit separate Gameface and constituent standalone mods.' if include_gameface else 'Install this combined package plus exactly one separate Gameface package; omit constituent standalone mods to avoid duplicate initialization.'))
     (BASE/'combined-build-report.json').write_text(json.dumps(report,indent=2,ensure_ascii=False),encoding='utf-8')
     print(json.dumps(report,indent=2,ensure_ascii=False))
     return report
 
-if __name__=='__main__':build()
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--include-gameface', action='store_true', help='Explicitly bundle Gameface for a one-file personal install')
+    args=parser.parse_args()
+    build(include_gameface=args.include_gameface)

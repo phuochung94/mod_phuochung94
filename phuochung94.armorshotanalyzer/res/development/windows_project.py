@@ -15,7 +15,7 @@ from zipfile import ZIP_STORED, ZipFile
 
 RES = Path(__file__).resolve().parent.parent
 PROJECT = RES.parent
-OUTPUT = Path(r'C:\pademinune-AP_Calculator-2.2.0')
+OUTPUT = Path(r'C:\mod_phuochung94\.wotmod')
 def client_identity():
     game = Path(r'C:\Program Files (x86)\Steam\steamapps\common\World of Tanks\asia')
     root = ET.parse(str(game / 'version.xml')).getroot()

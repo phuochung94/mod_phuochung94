@@ -16,13 +16,14 @@ bundle = project.OUTPUT / ('UNZIP-' + mod.stem + '.zip')
 gameface = project.gameface_package()
 stage = Path(tempfile.mkdtemp(prefix='release-review-', dir=str(HERE / 'client_inspection')))
 expected = {'res/' + p.relative_to(project.RES).as_posix(): p for p in project.runtime_files()}
+expected['meta.xml'] = project.PROJECT / 'meta.xml'
 with ZipFile(mod) as archive:
     assert archive.testzip() is None
     assert len(archive.namelist()) == len(set(archive.namelist()))
     assert set(archive.namelist()) == set(expected)
     for info in archive.infolist():
         name = PurePosixPath(info.filename)
-        assert not name.is_absolute() and '..' not in name.parts and name.parts[0] == 'res'
+        assert not name.is_absolute() and '..' not in name.parts and (name.parts[0] == 'res' or str(name) == 'meta.xml')
         assert info.compress_type == ZIP_STORED
         data = archive.read(info.filename)
         assert data == expected[info.filename].read_bytes(), info.filename

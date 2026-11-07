@@ -12,16 +12,16 @@
   "package_crc_structure_and_content": "PASS", 
   "artifact_tests": "PASS", 
   "mod_and_openwg_privacy_static_audit": "PASS", 
-  "exact_runtime_file_count": 18, 
+  "exact_runtime_file_count": 19, 
   "in_game_validation": false, 
   "mod": {
-    "path": "C:\\pademinune-AP_Calculator-2.2.0\\phuochung94.armorshotanalyzer-ASIA 2.4.1.1 #991.wotmod", 
-    "sha256": "067543dae046610c3b320eec2681506fa8b9edf384672d13683f3f7c23603c30"
+    "path": "C:\\mod_phuochung94\\.wotmod\\phuochung94.armorshotanalyzer-ASIA 2.4.1.1 #991.wotmod", 
+    "sha256": "e640d653e2a0a3e56b3939047fe126d61dc6b97c502e931f98babb62d42d6d6e"
   }, 
   "packaged_bytecode_test_count": 73, 
   "bundle": {
-    "path": "C:\\pademinune-AP_Calculator-2.2.0\\UNZIP-phuochung94.armorshotanalyzer-ASIA 2.4.1.1 #991.zip", 
-    "sha256": "77f419d38f3fe5bde3cd50facc8b8596e6845be263e7c626a4717221e3476e65"
+    "path": "C:\\mod_phuochung94\\.wotmod\\UNZIP-phuochung94.armorshotanalyzer-ASIA 2.4.1.1 #991.zip", 
+    "sha256": "8525bbc8ce259720b9b4d1652c1495fd02d99d763845dfcda2ec48adc891e006"
   }, 
-  "stage": "C:\\pademinune-AP_Calculator-2.2.0\\pademinune-AP_Calculator-Windows\\res\\development\\client_inspection\\release-review-hkr4rnk9"
+  "stage": "C:\\mod_phuochung94\\phuochung94.armorshotanalyzer\\res\\development\\client_inspection\\release-review-1grgexpk"
 }

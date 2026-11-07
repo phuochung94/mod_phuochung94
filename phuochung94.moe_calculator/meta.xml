@@ -1,15 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
 <root>
-    <!-- Reverse-domain unique id. Controls load order; mods with the same id
-         are treated as versions/parts of the same modification. -->
-    <id>com.phuochung94.moe_calculator</id>
-    <!-- Compared character-by-character (ASCII). Use zero-padded segments. -->
-    <version>8.0.0</version>
-    <name>phuochung94's MoE Calculator</name>
-    <description>phuochung94's MoE Calculator - a World of Tanks Garage mod.
+  <id>com.phuochung94.moe_calculator</id>
+  <version>8.0.0</version>
+  <name>phuochung94's MoE Calculator</name>
+  <description>phuochung94's MoE Calculator - a World of Tanks Garage mod.
 
 REQUIRES OpenWG Gameface (install it first) - without it the widget will not appear.
 
 Maintainer: phuochung94
 Original author: 14th_ua
-Source: https://github.com/drizzer14/moe-calculator</description>
+Source: https://github.com/drizzer14/moe-calculator
+Target game: ASIA 2.4.1.1 #991</description>
+  <author>phuochung94</author>
 </root>

@@ -1,0 +1,140 @@
+
+@font-face {
+    font-family: "Warhelios";
+    src: url("Warhelios-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "PF DIN Max Compressed";
+    src: url("PFDINMax-CompressedBold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    /* must match VIEW_WIDTH/VIEW_HEIGHT in ArmorShotAnalyzerBattleView.js (the window surface size) */
+    width: 256px;
+    height: 256px;
+    background: transparent;
+    overflow: hidden;
+    pointer-events: none;
+    /* anchor point for the absolutely-positioned rows below */
+    position: relative; 
+    /* background-color: lightcyan; */
+    /* background-image: url("wot-background.jpg");
+    background-size: 256px 256px;
+    background-repeat: no-repeat;  */
+}
+
+
+/* all left and right offsets from now on are relative to an objects center */
+.centered-label {
+    position: absolute;
+    left: 128px;
+    transform: translate(-50%, -50%);
+    font-family: "Warhelios", "PF DIN Max Compressed", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    /* Tight dark outline for every value/status, with a soft lower shadow. */
+    text-shadow: -1px -1px 0 #171A10, 0 -1px 0 #171A10,
+                 1px -1px 0 #171A10, -1px 0 0 #171A10,
+                 1px 0 0 #171A10, -1px 1px 0 #171A10,
+                 0 1px 0 #171A10, 1px 1px 0 #171A10,
+                 0 2px 2px rgba(0, 0, 0, 0.75);
+    white-space: nowrap;
+    z-index: 1;
+}
+
+#armor-label {
+    top: 155px; /* 35px center - 15px */
+    color: #9CFF3A;
+    font-size: 22px;
+}
+
+#prob-label {
+    display: none; /* Probability and all status text are disabled. */
+    /* Loaded shell, penetration and spaced-armor status may wrap to two rows. */
+    top: 204px;
+    width: 244px;
+    color: #9CFF3A;
+    font-size: 15px;
+    line-height: 17px;
+    text-align: center;
+    white-space: normal;
+}
+
+#angle-label {
+    top: 165px;   /* body's vertical center (70px / 2) -- same line as center */
+    left: 160px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/* design-time reference mark for the screen center -- not part of the shipped mod */
+#design-guide-dot {
+    position: absolute;
+    top: 128px;   /* body's vertical center for a 256x256 box */
+    left: 128px;  /* body's horizontal center */
+    transform: translate(-50%, -50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.9);
+    z-index: 2;
+}
+
+/* real indicator: a square bracket (just its 4 corner dots) around the crosshair
+   while a weak-spot track is targeted */
+#track-indicator {
+    position: absolute;
+    top: 128px;   /* body's vertical center for a 256x256 box */
+    left: 128px;  /* body's horizontal center */
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    z-index: 2;
+}
+
+/* four independent dots -- kept as plain elements (not ::before/box-shadow
+   clones) since this engine's CSS support is limited and dropped the
+   pseudo-element approach's real dot instead of just its shadow clones */
+.track-dot {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: #CCFF66;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+}
+
+.track-dot-tl { top: 0; left: 0; }
+.track-dot-tr { top: 0; right: 0; }
+.track-dot-bl { bottom: 0; left: 0; }
+.track-dot-br { bottom: 0; right: 0; }
+
+#label-bg {
+    position: absolute;
+    top: 167px;   /* body's vertical center for a 256x256 box */
+    left: 128px;  /* body's horizontal center */
+    transform: translate(-50%, -50%);
+    width: 110px;  /* wider than the label block -- the fade needs room to taper off */
+    height: 70px;
+    /* backdrop-filter can't blur the 3D battle scene behind this transparent
+       overlay window (it only samples the browser's own DOM surface, and this
+       engine may not implement it at all) -- fake the "soft glow, not a box"
+       look with a plain radial tint that fades to transparent instead. */
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.35) 45%, rgba(0, 0, 0, 0) 75%);
+    z-index: 0;
+}
+
+
+#ap-root {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9000;
+}
